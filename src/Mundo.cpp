@@ -108,7 +108,7 @@ void Mundo::tecla(unsigned char key)
 				Vector2D pos=hombre.getPos();
 				d->setPos(pos.x,pos.y,pos.x,pos.y);
 				disparos.agregar(d);
-				hombre.setVel(0,0);
+				//hombre.setVel(0,0);
 				ETSIDI::play("sonidos/disparo.wav");
 				break;
 			}
