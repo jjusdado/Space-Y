@@ -6,10 +6,11 @@
 
 Hombre::Hombre():sprite("imagenes/pangPlayer.png",5)
 {
-	sprite.setCenter(10,0);
+	sprite.setCenter(0,0);
 	sprite.setSize(2,2);
 	altura=1.8f;
-	posicion.y = 7.5;
+	posicion.y = 7.5f;
+	posicion.x = -10.0f;
 	aceleracion.y = 0; //sin gravedad la nave
 }
 

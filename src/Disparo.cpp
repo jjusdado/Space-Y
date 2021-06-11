@@ -23,7 +23,7 @@ void Disparo::dibuja()
 
 	glDisable(GL_LIGHTING);
 	glBegin(GL_LINES);
-		glVertex3f(origen.x-10,origen.y,0);
+		glVertex3f(origen.x,origen.y,0);
 		glVertex3f(posicion.x,posicion.y,0);
 	glEnd();
 	glEnable(GL_LIGHTING);
@@ -35,9 +35,10 @@ void Disparo::dibuja()
 	glPopMatrix();
 
 }
-
+/*
 void Disparo::setPos(float ix,float iy)
 {
 	ObjetoMovil::setPos(ix,iy);
 	origen=posicion;
 }	
+*/

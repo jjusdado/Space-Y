@@ -11,8 +11,8 @@ public:
 	Disparo();
 	virtual ~Disparo();
 	float getRadio(){return radio;}
-	void setPos(float ix,float iy);
+	//void setPos(float ix,float iy);
 protected:
 	float radio;
-	Vector2D origen;
+
 };
