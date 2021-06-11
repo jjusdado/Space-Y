@@ -12,15 +12,15 @@ Interaccion::~Interaccion(void)
 
 void Interaccion::rebote(Hombre &h, Caja c)
 {
-	float xmax=c.suelo.limite2.x;
-	float xmin=c.suelo.limite1.x;
-	if(h.posicion.x>xmax){
-		h.posicion.x=xmax;
-		h.velocidad.x=0;
+	float xmin=c.pared_dcha.limite1.y;
+	float xmax=c.pared_dcha.limite2.y;
+	if(h.posicion.y>xmax-1.8){   //el -1.8 es para que se vea el sprite entero (sino se queda justo por encima)
+		h.posicion.y=xmax-1.8;
+		h.velocidad.y=0;
 	}
-	if(h.posicion.x<xmin){
-		h.posicion.x=xmin;
-		h.velocidad.x=0;
+	if(h.posicion.y<xmin){
+		h.posicion.y=xmin;
+		h.velocidad.y=0;
 	}
 }
 void Interaccion::rebote(Esfera& e, Caja c)
