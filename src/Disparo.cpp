@@ -3,13 +3,13 @@
 #include "Disparo.h"
 #include "glut.h"
 //////////////////////////////////////////////////////////////////////
-// Construction/Destruction
+//////////////////// Construction/Destruction ////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 Disparo::Disparo()
 {
 	radio=0.25f;
-	velocidad.y=5.0f;
+	velocidad.x=5.0f;
 }
 
 Disparo::~Disparo()
@@ -23,7 +23,7 @@ void Disparo::dibuja()
 
 	glDisable(GL_LIGHTING);
 	glBegin(GL_LINES);
-		glVertex3f(origen.x,origen.y,0);
+		glVertex3f(origen.x-10,origen.y,0);
 		glVertex3f(posicion.x,posicion.y,0);
 	glEnd();
 	glEnable(GL_LIGHTING);

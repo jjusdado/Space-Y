@@ -131,12 +131,7 @@ void Mundo::teclaEspecial(unsigned char key)
 {
 	switch(key)
 	{
-	case GLUT_KEY_LEFT:
-		hombre.setVel (-5.0f, 0.0f);
-		break;
-	case GLUT_KEY_RIGHT:
-		hombre.setVel (5.0f, 0.0f);
-		break;
+
 	case GLUT_KEY_UP:
 		hombre.setVel(0.0f, 5.0f);
 		break;

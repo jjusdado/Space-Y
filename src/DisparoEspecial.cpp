@@ -4,7 +4,7 @@
 DisparoEspecial::DisparoEspecial(void)
 {
 	radio=0.4f;
-	velocidad.y=15;
+	velocidad.x=15;
 }
 
 
@@ -19,10 +19,10 @@ void DisparoEspecial::dibuja()
 	glLineWidth(2.0f);
 
 	glBegin(GL_LINES);
-		glVertex3f(origen.x-0.1,origen.y,0);
-		glVertex3f(posicion.x-0.1,posicion.y,0);
-		glVertex3f(origen.x+0.1,origen.y,0);
-		glVertex3f(posicion.x+0.1,posicion.y,0);
+		glVertex3f(origen.x,origen.y-0.1,0);
+		glVertex3f(posicion.x,posicion.y-0.1,0);
+		glVertex3f(origen.x,origen.y+0.1,0);
+		glVertex3f(posicion.x,posicion.y+0.1,0);
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glLineWidth(1.0f);

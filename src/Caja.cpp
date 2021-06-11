@@ -7,7 +7,7 @@
 Caja::Caja()
 {
 	suelo.setColor(0,100,0);
-	suelo.setPos(-10.0f,0,10.0f,0);
+	suelo.setPos(-10.0f,0,10.0f,0.0f);
 
 	techo.setColor(0,100,0);
 	techo.setPos(-10.0f,15.0f,10.0f,15.0f);
