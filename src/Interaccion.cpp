@@ -30,6 +30,7 @@ void Interaccion::rebote(Esfera& e, Caja c)
 	rebote(e,c.pared_dcha);
 	rebote(e,c.pared_izq);
 }
+
 bool Interaccion::rebote(Esfera &e, Pared p)
 {
 	Vector2D dir;

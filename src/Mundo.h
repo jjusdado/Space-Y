@@ -7,6 +7,8 @@
 #include "ListaDisparos.h"	
 #include "EsferaPulsante.h"
 #include "DisparoEspecial.h"
+#include "Obstaculo.h"
+#include "ListaObstaculo.h"
 
 class Mundo
 {
@@ -15,6 +17,7 @@ class Mundo
 
 	ListaEsferas esferas;
 	ListaDisparos disparos;
+	ListaObstaculo obstaculos;
 	Hombre hombre;
 	Caja caja;
 	Bonus bonus;

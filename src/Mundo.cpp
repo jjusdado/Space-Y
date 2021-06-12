@@ -2,6 +2,7 @@
 #include "glut.h"
 #include <cmath>
 #include "Interaccion.h"
+#include "ETSIDI.h"
 
 Mundo::~Mundo()
 {
@@ -30,8 +31,10 @@ void Mundo::dibuja()
 	plataforma.dibuja();
 	bonus.dibuja();
 	esferas.dibuja();
-	esfera_pulsante.dibuja();
+	//esfera_pulsante.dibuja();
 	disparo_especial.dibuja();
+
+	obstaculos.dibuja();
 
 	ETSIDI::setTextColor(1,1,0);
 	ETSIDI::setFont("fuentes/Bitwise.ttf",16);
@@ -40,6 +43,15 @@ void Mundo::dibuja()
 	ETSIDI::setTextColor(1,1,1);
 	ETSIDI::setFont("fuentes/Bitwise.ttf",12);
 	ETSIDI::printxy("Hernando & Rodriguez-Losada",-10,16.4);
+
+	//función obstáculos
+	int j = 0;
+	for (int i = 0; i < 100; i++) {
+		for (int k = 0; k < ETSIDI::lanzaDado(3,1); k++){  //de 1 a 3 obstaculos por columna  
+			obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 0)));
+	}
+		j = j + 2;
+	}
 }
 
 void Mundo::mueve()
@@ -81,7 +93,7 @@ void Mundo::inicializa()
 
 	bonus.setPos(5.0f,5.0f);
 	plataforma.setPos(-5.0f,9.0f,5.0f,9.0f);
-
+/*
 	Esfera *e1=new Esfera(1.5f,2,4,5,15);
 	e1->setColor(0,0,255);
 	esferas.agregar(e1); //esfera
@@ -95,7 +107,7 @@ void Mundo::inicializa()
 		Esfera* aux=new Esfera(0.75+i*0.25,i,1+i,i,i);
 		esferas.agregar(aux);
 	} 
-
+	*/
 }
 
 void Mundo::tecla(unsigned char key)

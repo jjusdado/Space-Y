@@ -93,8 +93,10 @@
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\ListaEsferas.cpp" />
+    <ClCompile Include="src\ListaObstaculo.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\ObjetoMovil.cpp" />
+    <ClCompile Include="src\Obstaculo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
@@ -111,8 +113,10 @@
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\ListaEsferas.h" />
+    <ClInclude Include="src\ListaObstaculo.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\ObjetoMovil.h" />
+    <ClInclude Include="src\Obstaculo.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
