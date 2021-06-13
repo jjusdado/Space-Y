@@ -143,3 +143,32 @@ bool Interaccion::colision(Disparo d, Caja c)
 	//utilizo la funcion anterior
 	return colision(d,c.techo);
 }
+
+bool Interaccion::colision(Obstaculo o, Disparo d)
+{
+	/*
+	Vector2D poso = o.getPos(); //la posicion del hombre de la base
+	Vector2D posd = d.getPos();
+	//pos.y += h.getAltura() / 2.0f; //posicion del centro
+	*/
+	float distancia = (d.posicion - o.posicion).modulo();
+	if (distancia < (d.radio+o.radio))
+		return true;
+	return false;
+}
+
+//listaobstaculo con listadisparos
+
+void Interaccion::colision(ListaObstaculo& o, ListaDisparos& d) {
+
+	int numo = o.getNumero();
+	int numd = d.getNumero();
+	for (int i = numo-1; i >=  0; i--)
+		for (int j = numd-1; j >= 0; j--)
+			if (Interaccion::colision(*o.lista[i], *d.lista[j])) {
+				o.eliminar(i);
+				d.eliminar(j);
+				ETSIDI::play("sonidos/impacto.wav");
+			}
+}
+

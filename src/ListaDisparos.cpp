@@ -27,13 +27,6 @@ void ListaDisparos::mueve(float t)
 		lista[i]->mueve(t);
 }
 
-void ListaDisparos::destruirContenido()
-{
-	for(int i=0;i<numero;i++)
-		delete lista[i];
-
-	numero=0;
-}
 
 bool ListaDisparos::agregar(Disparo *d)
 {
@@ -67,4 +60,47 @@ void ListaDisparos::colision(Caja c)
 			
 		}
 	}
+}
+
+Disparo* ListaDisparos::operator [](int i)
+{
+	if (i >= numero)
+		i = numero - 1;
+	if (i < 0)
+		i = 0;
+
+	return lista[i];
+}
+
+
+void ListaDisparos::destruirContenido()
+{
+	for (int i = 0; i < numero; i++)
+		delete lista[i];
+
+	numero = 0;
+}
+
+void ListaDisparos::eliminar(int index)
+{
+	if ((index < 0) || (index >= numero))
+		return;
+
+	delete lista[index];
+
+	numero--;
+	for (int i = index; i < numero; i++)
+		lista[i] = lista[i + 1];
+
+}
+
+void ListaDisparos::eliminar(Disparo* e)
+{
+	for (int i = 0; i < numero; i++)
+		if (lista[i] == e)
+		{
+			eliminar(i);
+			return;
+		}
+
 }

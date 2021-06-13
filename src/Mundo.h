@@ -22,6 +22,7 @@ class Mundo
 	Caja caja;
 	Bonus bonus;
 	Pared plataforma;
+	Disparo disparounico;
 
 	float x_ojo;
 	float y_ojo;

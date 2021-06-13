@@ -31,14 +31,14 @@ void ListaObstaculo::dibuja()
 	for (int i = 0; i < numero; i++)
 		lista[i]->dibuja();
 }
-/*
+
 void ListaObstaculo::mueve(float t)
 {
 	for (int i = 0; i < numero; i++)
 		lista[i]->mueve(t);
 }
 
-
+/*
 void ListaObstaculo::rebote(Caja caja)
 {
 	for (int i = 0; i < numero; i++)
@@ -57,6 +57,29 @@ void ListaObstaculo::rebote(Pared p)
 {
 	for (int i = 0; i < numero; i++)
 		Interaccion::rebote(*(lista[i]), p);
+}
+
+
+
+Esfera* ListaObstaculo::colision(Hombre h)
+{
+	for (int i = 0; i < numero; i++)
+	{
+		if (Interaccion::colision(*(lista[i]), h))
+			return lista[i];
+	}
+	return 0; //no hay colisión
+
+}
+*/
+Obstaculo* ListaObstaculo::operator [](int i)
+{
+	if (i >= numero)
+		i = numero - 1;
+	if (i < 0)
+		i = 0;
+
+	return lista[i];
 }
 
 void ListaObstaculo::destruirContenido()
@@ -80,7 +103,7 @@ void ListaObstaculo::eliminar(int index)
 
 }
 
-void ListaObstaculo::eliminar(Esfera* e)
+void ListaObstaculo::eliminar(Obstaculo* e)
 {
 	for (int i = 0; i < numero; i++)
 		if (lista[i] == e)
@@ -91,23 +114,14 @@ void ListaObstaculo::eliminar(Esfera* e)
 
 }
 
-Esfera* ListaObstaculo::colision(Hombre h)
+Obstaculo* ListaObstaculo::colision(Disparo d)
 {
 	for (int i = 0; i < numero; i++)
 	{
-		if (Interaccion::colision(*(lista[i]), h))
+		if (Interaccion::colision(*(lista[i]), d))
 			return lista[i];
 	}
 	return 0; //no hay colisión
 
 }
-*/
-Obstaculo* ListaObstaculo::operator [](int i)
-{
-	if (i >= numero)
-		i = numero - 1;
-	if (i < 0)
-		i = 0;
 
-	return lista[i];
-}

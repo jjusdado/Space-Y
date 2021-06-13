@@ -5,22 +5,25 @@
 #include "Obstaculo.h"
 #include "Caja.h"
 #include "Hombre.h"
+#include "Disparo.h"
 
 
 class ListaObstaculo
 {
+	friend class Interaccion;
 public:
 	ListaObstaculo(void);
 	~ListaObstaculo(void);
 
-	//void mueve(float t);
+	void mueve(float t);
 	void dibuja();
 
 	bool agregar(Obstaculo* e);
-	//void eliminar(Obstaculo* e);
-	//void eliminar(int index);
-	//void destruirContenido();
+	void eliminar(Obstaculo* e);
+	void eliminar(int index);
+	void destruirContenido();
 
+	Obstaculo* colision(Disparo d);
 	//Obstaculo* colision(Hombre h);
 	//void rebote(Pared p);
 	//void rebote();

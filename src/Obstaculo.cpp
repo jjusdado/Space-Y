@@ -5,8 +5,9 @@
 
 Obstaculo::Obstaculo()
 {
-	radio = 1.0f;
+	radio = 0.5f;
 	//color.b = color.g = color.r = 255;
+	velocidad.x = -5.0f;
 }
 
 Obstaculo::~Obstaculo()
@@ -18,7 +19,7 @@ Obstaculo::Obstaculo(float rad, float x, float y)
 	radio = rad;
 	posicion.x = x;
 	posicion.y = y;
-
+	velocidad.x = -5.0f;
 }
 void Obstaculo::dibuja()
 {

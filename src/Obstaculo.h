@@ -1,8 +1,9 @@
 #pragma once
 #include "Vector2D.h"
 #include "ColorRGB.h"
+#include "ObjetoMovil.h"
 
-class Obstaculo
+class Obstaculo :public ObjetoMovil
 {
 
 		friend class Interaccion;
@@ -16,7 +17,7 @@ class Obstaculo
 	protected:
 		ColorRGB color;
 		float radio;
-		Vector2D posicion;
+		//Vector2D posicion;
 	
 };
 

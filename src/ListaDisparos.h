@@ -7,17 +7,25 @@
 
 class ListaDisparos  
 {
+	friend class Interaccion;
 public:
 	ListaDisparos();
 	virtual ~ListaDisparos();
 	
 	bool agregar(Disparo* d);
-	void destruirContenido();
 	void mueve(float t);
 	void dibuja();
 
+	void eliminar(Disparo* e);
+	void eliminar(int index);
+	void destruirContenido();
+
+
 	void colision(Pared p);
 	void colision(Caja c);
+
+	int getNumero() { return numero; }
+	Disparo* operator[] (int index);
 
 private:
 	Disparo * lista[MAX_DISPAROS];

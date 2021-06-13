@@ -46,12 +46,14 @@ void Mundo::dibuja()
 
 	//función obstáculos
 	int j = 0;
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i <100; i++) {
 		for (int k = 0; k < ETSIDI::lanzaDado(3,1); k++){  //de 1 a 3 obstaculos por columna  
-			obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 0)));
+			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 0)));
 	}
 		j = j + 2;
+	
 	}
+
 }
 
 void Mundo::mueve()
@@ -71,6 +73,9 @@ void Mundo::mueve()
 	disparos.colision(caja);
 	disparos.colision(plataforma);
 
+	obstaculos.mueve(0.025f);
+	disparounico.mueve(0.025f);
+
 	esferas.mueve(0.025f);
 	esferas.rebote();
 	esferas.rebote(plataforma);
@@ -80,8 +85,16 @@ void Mundo::mueve()
 		esferas.eliminar(aux);
 		ETSIDI::play("sonidos/impacto.wav");
 	}
+	
+	//eliminación obstaculo
 
 
+	Interaccion::colision(obstaculos, disparos);
+
+
+
+
+	
 	Interaccion::rebote(hombre,caja);
 }
 
@@ -135,6 +148,9 @@ void Mundo::tecla(unsigned char key)
 			break;
 		case '4':	
  			esferas.agregar (new Esfera(2.0f,0,10));
+			break;
+		case 'd':
+			disparounico.dibuja();
 			break;
 	}
 
