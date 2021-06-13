@@ -34,7 +34,7 @@ void Caja::dibuja()
 	//dibujo del fondo
 	glEnable(GL_TEXTURE_2D);
   
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo.png").id);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_2.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1,1,1);

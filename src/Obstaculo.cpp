@@ -5,6 +5,7 @@
 
 Obstaculo::Obstaculo()
 {
+
 	radio = 0.5f;
 	//color.b = color.g = color.r = 255;
 	velocidad.x = -5.0f;
@@ -15,7 +16,9 @@ Obstaculo::~Obstaculo()
 
 }
 Obstaculo::Obstaculo(float rad, float x, float y)
+
 {
+	
 	radio = rad;
 	posicion.x = x;
 	posicion.y = y;
@@ -41,3 +44,4 @@ void Obstaculo::setColor(Byte r, Byte v, Byte a)
 {
 	color.set(r, v, a);
 }
+

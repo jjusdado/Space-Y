@@ -14,6 +14,7 @@ void ObjetoMovil::mueve(float t)
 {
 	posicion=posicion+velocidad*t+aceleracion*(0.5f*t*t);
 	velocidad=velocidad+aceleracion*t;
+	
 }
 Vector2D ObjetoMovil::getPos()
 {

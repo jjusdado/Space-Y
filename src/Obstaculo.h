@@ -2,6 +2,8 @@
 #include "Vector2D.h"
 #include "ColorRGB.h"
 #include "ObjetoMovil.h"
+#include "ETSIDI.h"
+using ETSIDI::SpriteSequence;
 
 class Obstaculo :public ObjetoMovil
 {
@@ -14,9 +16,11 @@ class Obstaculo :public ObjetoMovil
 		void dibuja();
 		void setColor(Byte r, Byte v, Byte a);
 		void setRadio(float r);
+		
 	protected:
 		ColorRGB color;
 		float radio;
+	
 		//Vector2D posicion;
 	
 };
