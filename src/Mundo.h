@@ -23,7 +23,9 @@ class Mundo
 	Bonus bonus;
 	Pared plataforma;
 	Disparo disparounico;
-
+	bool impacto;
+	int numeroEsferas;
+	int nivel;
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
@@ -35,4 +37,7 @@ public:
 	void rotarOjo();
 	void mueve();
 	void dibuja();
+	bool getImpacto();
+	int getNumEsferas();
+	bool cargarNivel();
 };

@@ -12,7 +12,7 @@ public:
 	Disparo();
 	virtual ~Disparo();
 	float getRadio(){return radio;}
-	//void setPos(float ix,float iy);
+	void setPos(float ix,float iy, float ox, float oy);
 protected:
 	SpriteSequence sprite;
 	float radio;

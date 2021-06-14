@@ -6,11 +6,15 @@
 //////////////////// Construction/Destruction ////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-Disparo::Disparo()
+Disparo::Disparo() :sprite("imagenes/Missile_1_Flying_000.png", 1)
 {
-	radio=0.25f;
-	velocidad.x=5.0f;
+	sprite.setCenter(0, 0);
+	sprite.setSize(1, .5f);
+	radio = 0.25f;
+	velocidad.x = 5.0f;
 }
+
+
 
 Disparo::~Disparo()
 {
@@ -28,6 +32,12 @@ void Disparo::dibuja()
 	glEnd();
 	glEnable(GL_LIGHTING);
 
+	if ((velocidad.y < 0.01) && (velocidad.y > -0.01))
+		sprite.setState(0);
+	else if (sprite.getState() == 0)
+		sprite.setState(1, false);
+	sprite.draw();
+
 	glPushMatrix();
 	glTranslatef(posicion.x,posicion.y,0);
 
@@ -35,9 +45,9 @@ void Disparo::dibuja()
 	glPopMatrix();
 
 }
-/*void Disparo::setPos(float ix,float iy)
+void Disparo::setPos(float ix, float iy, float ox, float oy)
 {
-	ObjetoMovil::setPos(ix,iy);
-	origen=posicion;
-}	*/
+	ObjetoMovil::setPos(ix, iy);
+	origen = posicion;
+}
 

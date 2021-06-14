@@ -186,3 +186,52 @@ void Mundo::teclaEspecial(unsigned char key)
 		break;
 	}
 }
+bool Mundo::getImpacto()
+{
+
+	return impacto;
+
+}
+int Mundo::getNumEsferas()
+{
+	numeroEsferas = esferas.getNumero();
+	return numeroEsferas;
+
+}
+bool Mundo::cargarNivel()
+{
+	nivel++;
+	hombre.setPos(-8, 0);
+	esferas.destruirContenido();
+	disparos.destruirContenido();
+	if (nivel == 1)
+	{
+		plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
+		Esfera* e1 = new Esfera(1.5f, 2, 4, 5, 15);
+		e1->setColor(0, 0, 255);
+		esferas.agregar(e1); //esfera
+	}
+	if (nivel == 2)
+	{
+		plataforma.setPos(-3.0f, 6.0f, 3.0f, 6.0f);
+		plataforma.setColor(255, 0, 0);
+		EsferaPulsante* e3 = new EsferaPulsante;
+		e3->setPos(0, 12);
+		e3->setVel(5, 3);
+		esferas.agregar(e3);
+	}
+	if (nivel == 3)
+	{
+		plataforma.setPos(-10.0f, 12.0f, 4.0f, 10.0f);
+		plataforma.setColor(255, 0, 255);
+		for (int i = 0; i < 5; i++)
+		{
+			Esfera* aux = new Esfera(1.5, -5 + i, 12, i, 5);
+			aux->setColor(i * 40, 0, 255 - i * 40);
+			esferas.agregar(aux);
+		}
+	}
+	if (nivel <= 3)
+		return true;
+	return false;
+}
