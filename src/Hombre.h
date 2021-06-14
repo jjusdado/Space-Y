@@ -1,6 +1,4 @@
-
 #pragma once
-
 #include "Vector2D.h"
 #include "ETSIDI.h"
 #include "ObjetoMovil.h"

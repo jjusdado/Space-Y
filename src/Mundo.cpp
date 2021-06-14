@@ -110,10 +110,10 @@ void Mundo::inicializa()
 	y_ojo=7.5;
 	z_ojo=30;
 
-	bonus.setPos(5.0f,5.0f);
-	plataforma.setPos(-5.0f,9.0f,5.0f,9.0f);
+	//bonus.setPos(5.0f,5.0f);
+	//plataforma.setPos(-5.0f,9.0f,5.0f,9.0f);
 	Vector2D pos = hombre.getPos();
-	disparo_especial.setPos(pos.x, pos.y, pos.x, pos.y);
+	//disparo_especial.setPos(pos.x, pos.y, pos.x, pos.y);
 /*
 	Esfera *e1=new Esfera(1.5f,2,4,5,15);
 	e1->setColor(0,0,255);

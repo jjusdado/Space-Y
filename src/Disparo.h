@@ -1,8 +1,9 @@
-
 #pragma once
 #include "ObjetoMovil.h"
 #include "Vector2D.h"
+#include "ETSIDI.h"
 
+using ETSIDI::SpriteSequence;
 class Disparo :public ObjetoMovil 
 {
 	friend class Interaccion;
@@ -13,6 +14,7 @@ public:
 	float getRadio(){return radio;}
 	//void setPos(float ix,float iy);
 protected:
+	SpriteSequence sprite;
 	float radio;
 
 };
