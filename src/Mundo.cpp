@@ -32,6 +32,7 @@ void Mundo::dibuja()
 	bonus.dibuja();
 	esferas.dibuja();
 	//esfera_pulsante.dibuja();
+	
 	disparo_especial.dibuja();
 	
 	obstaculos.dibuja();
