@@ -5,6 +5,7 @@ DisparoEspecial::DisparoEspecial(void)
 {
 	radio=0.4f;
 	velocidad.x=15;
+
 }
 
 

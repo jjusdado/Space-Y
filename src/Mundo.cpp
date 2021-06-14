@@ -33,7 +33,7 @@ void Mundo::dibuja()
 	esferas.dibuja();
 	//esfera_pulsante.dibuja();
 	disparo_especial.dibuja();
-
+	
 	obstaculos.dibuja();
 
 	ETSIDI::setTextColor(1,1,0);
@@ -46,11 +46,14 @@ void Mundo::dibuja()
 
 	//función obstáculos
 	int j = 0;
-	for (int i = 0; i <100; i++) {
-		for (int k = 0; k < ETSIDI::lanzaDado(3,1); k++){  //de 1 a 3 obstaculos por columna  
-			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 0)));
-	}
-		j = j + 2;
+	for (int i = 0; i <100; i++) 
+	{
+		for (int k = 0; k < ETSIDI::lanzaDado(3,1); k++) //de 1 a 3 obstaculos por columna  
+		{ 
+			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+		}
+		
+		j = j + 1;
 	
 	}
 
@@ -61,6 +64,8 @@ void Mundo::mueve()
 	disparo_especial.mueve(0.025f);
 	if(Interaccion::colision(disparo_especial,plataforma))
 		disparo_especial.setVel(0,0);
+
+
 
 	esfera_pulsante.mueve(0.025f);
 	Interaccion::rebote(esfera_pulsante,plataforma);
@@ -74,7 +79,7 @@ void Mundo::mueve()
 	disparos.colision(plataforma);
 
 	obstaculos.mueve(0.025f);
-	disparounico.mueve(0.025f);
+	//disparounico.mueve(0.025f);
 
 	esferas.mueve(0.025f);
 	esferas.rebote();
@@ -106,6 +111,8 @@ void Mundo::inicializa()
 
 	bonus.setPos(5.0f,5.0f);
 	plataforma.setPos(-5.0f,9.0f,5.0f,9.0f);
+	Vector2D pos = hombre.getPos();
+	disparo_especial.setPos(pos.x, pos.y, pos.x, pos.y);
 /*
 	Esfera *e1=new Esfera(1.5f,2,4,5,15);
 	e1->setColor(0,0,255);
@@ -137,7 +144,17 @@ void Mundo::tecla(unsigned char key)
 				ETSIDI::play("sonidos/disparo.wav");
 				break;
 			}
-		case '1':	
+		case 's':
+		{
+			DisparoEspecial* d1 = new DisparoEspecial;
+			Vector2D pos = hombre.getPos();
+			d1->setPos(pos.x, pos.y, pos.x, pos.y);
+
+			disparos.agregar(d1);
+
+			break;
+		}
+		/*case '1':	
  			esferas.agregar (new Esfera(0.5f,0,10));
 			break;
 		case '2':	
@@ -151,7 +168,7 @@ void Mundo::tecla(unsigned char key)
 			break;
 		case 'd':
 			disparounico.dibuja();
-			break;
+			break;*/
 	}
 
 }

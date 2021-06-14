@@ -156,6 +156,18 @@ bool Interaccion::colision(Obstaculo o, Disparo d)
 		return true;
 	return false;
 }
+bool Interaccion::colision(Obstaculo o, DisparoEspecial de)
+{
+	/*
+	Vector2D poso = o.getPos(); //la posicion del hombre de la base
+	Vector2D posd = d.getPos();
+	//pos.y += h.getAltura() / 2.0f; //posicion del centro
+	*/
+	float distancia = (de.posicion - o.posicion).modulo();
+	if (distancia < (de.radio + o.radio))
+		return true;
+	return false;
+}
 
 //listaobstaculo con listadisparos
 

@@ -7,7 +7,7 @@ Obstaculo::Obstaculo()
 {
 
 	radio = 0.5f;
-	//color.b = color.g = color.r = 255;
+	color.b = color.g = color.r = 255;
 	velocidad.x = -5.0f;
 }
 

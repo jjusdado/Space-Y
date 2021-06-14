@@ -1,4 +1,5 @@
 #pragma once
+#include "ObjetoMovil.h"
 #include "disparo.h"
 class DisparoEspecial :
 	public Disparo

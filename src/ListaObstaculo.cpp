@@ -4,7 +4,8 @@
 ListaObstaculo::ListaObstaculo(void)
 {
 	numero = 0;
-	for (int i = 0; i < MAX_OBSTACULOS; i++)lista[i] = 0;
+	for (int i = 0; i < MAX_OBSTACULOS; i++)
+		lista[i] = 0;
 }
 
 
@@ -108,7 +109,7 @@ void ListaObstaculo::eliminar(Obstaculo* e)
 	for (int i = 0; i < numero; i++)
 		if (lista[i] == e)
 		{
-			eliminar(i);
+			eliminar(e);
 			return;
 		}
 
@@ -124,4 +125,15 @@ Obstaculo* ListaObstaculo::colision(Disparo d)
 	return 0; //no hay colisión
 
 }
+
+/*Obstaculo* ListaObstaculo::colision(DisparoEspecial de)
+{
+	for (int i = 0; i < numero; i++)
+	{
+		if (Interaccion::colision(*(lista[i]), de))
+			return lista[i];
+	}
+	return 0; //no hay colisión
+
+}*/
 

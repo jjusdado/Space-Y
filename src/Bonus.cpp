@@ -8,8 +8,8 @@ Bonus::Bonus()
 {
 	//movimiento gravitatorio
 	//velocidad vertical inicial
-	aceleracion.y=-9.8f;
-	velocidad.y=5;
+	
+	velocidad.x=-5.0f;
 	lado=0.5f;
 }
 

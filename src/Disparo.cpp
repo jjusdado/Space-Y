@@ -19,7 +19,7 @@ Disparo::~Disparo()
 
 void Disparo::dibuja()
 {
-	glColor3f(0.0f,1.0f,1.0f);
+	glColor3f(1.0f,1.0f,1.0f);
 
 	glDisable(GL_LIGHTING);
 	glBegin(GL_LINES);
@@ -35,10 +35,9 @@ void Disparo::dibuja()
 	glPopMatrix();
 
 }
-/*
-void Disparo::setPos(float ix,float iy)
+/*void Disparo::setPos(float ix,float iy)
 {
 	ObjetoMovil::setPos(ix,iy);
 	origen=posicion;
-}	
-*/
+}	*/
+

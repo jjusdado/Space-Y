@@ -24,6 +24,9 @@ public:
 	void destruirContenido();
 
 	Obstaculo* colision(Disparo d);
+	
+	//Obstaculo* colision(DisparoEspecial de);
+	
 	//Obstaculo* colision(Hombre h);
 	//void rebote(Pared p);
 	//void rebote();

@@ -3,6 +3,7 @@
 
 #define MAX_DISPAROS 10
 #include "Disparo.h"
+#include "DisparoEspecial.h"
 #include "Caja.h"
 
 class ListaDisparos  
@@ -13,10 +14,16 @@ public:
 	virtual ~ListaDisparos();
 	
 	bool agregar(Disparo* d);
+	
+	//bool agregar(DisparoEspecial* de);
+	
 	void mueve(float t);
 	void dibuja();
 
 	void eliminar(Disparo* e);
+	
+	//void eliminar(DisparoEspecial* de);
+	
 	void eliminar(int index);
 	void destruirContenido();
 
