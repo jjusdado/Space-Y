@@ -28,7 +28,7 @@ void Mundo::dibuja()
 	caja.dibuja();
 	hombre.dibuja();
 	disparos.dibuja();
-	plataforma.dibuja();
+	//plataforma.dibuja();
 	bonus.dibuja();
 	esferas.dibuja();
 	//esfera_pulsante.dibuja();
@@ -39,11 +39,11 @@ void Mundo::dibuja()
 
 	ETSIDI::setTextColor(1,1,0);
 	ETSIDI::setFont("fuentes/Bitwise.ttf",16);
-	ETSIDI::printxy("Pang 1.1", -10,17);
+	ETSIDI::printxy("SPACE Y", -10,17);
 	
 	ETSIDI::setTextColor(1,1,1);
 	ETSIDI::setFont("fuentes/Bitwise.ttf",12);
-	ETSIDI::printxy("Hernando & Rodriguez-Losada",-10,16.4);
+	ETSIDI::printxy("Christian, Dani, Dani, Juan y Pedro",-10,16.4);
 
 	//función obstáculos
 	int j = 0;

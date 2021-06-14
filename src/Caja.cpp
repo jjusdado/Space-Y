@@ -6,10 +6,10 @@
 
 Caja::Caja()
 {
-	suelo.setColor(0,100,0);
+	suelo.setColor(000,000,000);
 	suelo.setPos(-15.0f,0,100.0f,0.0f);
 
-	techo.setColor(0,100,0);
+	techo.setColor(000,000,000);
 	techo.setPos(-15.0f,15.0f,100.0f,15.0f);
 	
     pared_dcha.setColor(0,150,0);
