@@ -4,11 +4,11 @@
 Vida::Vida():sprite1("imagenes/vida.png", 1), sprite2("imagenes/vida.png", 1), sprite3("imagenes/vida.png", 1)
 {
 	sprite1.setCenter(0, 0);
-	sprite1.setSize(2, 2);
+	sprite1.setSize(1.5, 1.5);
 	sprite2.setCenter(0, 0);
-	sprite2.setSize(2, 2);
+	sprite2.setSize(1.5, 1.5);
 	sprite3.setCenter(0, 0);
-	sprite3.setSize(2, 2);
+	sprite3.setSize(1.5, 1.5);
 }
 
 Vida::~Vida()

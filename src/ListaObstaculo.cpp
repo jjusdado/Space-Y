@@ -16,7 +16,7 @@ ListaObstaculo::~ListaObstaculo(void)
 
 bool ListaObstaculo::agregar(Obstaculo* e)
 {
-	for (int i = 0; i < numero; i++)//para evitar que se añada una esfera ya existente
+	for (int i = 0; i < numero; i++)//para evitar que se añada un obstaculo ya existente
 		if (lista[i] == e)
 			return false;
 
