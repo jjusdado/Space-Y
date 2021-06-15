@@ -141,7 +141,7 @@ bool Interaccion::colision(Disparo d, Pared p)
 bool Interaccion::colision(Disparo d, Caja c)
 {
 	//utilizo la funcion anterior
-	return colision(d,c.techo);
+	return colision(d,c.pared_izq);
 }
 
 bool Interaccion::colision(Obstaculo o, Disparo d)
@@ -186,7 +186,7 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 				d.eliminar(j);
 				
 				int r = ETSIDI::lanzaDado(10,1);
-				if (r ==5) {
+				if (r ==5 || r ==1 || r == 2 || r == 3 || r == 4) {
 					b.setPos(posb.x, posb.y);
 					return true;
 				/*

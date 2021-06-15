@@ -50,7 +50,7 @@ void Mundo::dibuja()
 		{ 
 			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
 		}		
-		j = j + 1;	
+		j = j + 3;	
 	}
 }
 
@@ -122,11 +122,14 @@ void Mundo::tecla(unsigned char key)
 				break;
 			}
 			else {
-				Disparo* d = new Disparo();
-				Vector2D pos = hombre.getPos();
-				d->setPos(pos.x, pos.y, pos.x, pos.y);
-				disparos.agregar(d);
-				ETSIDI::play("sonidos/explosion fireworks1.wav");
+				if (disparos.getNumero() < 1) {
+					Disparo* d = new Disparo();
+					Vector2D pos = hombre.getPos();
+					d->setPos(pos.x, pos.y, pos.x, pos.y);
+					disparos.agregar(d);
+					ETSIDI::play("sonidos/explosion fireworks1.wav");
+					break;
+				}
 				break;
 			}
 		}

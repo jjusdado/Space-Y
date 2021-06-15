@@ -61,6 +61,7 @@ void ListaDisparos::colision(Pared p)
 		if(Interaccion::colision(*(lista[i]),p))
 		{
 			lista[i]->setVel(0,0);
+			eliminar(i);
 		}
 	}
 }
@@ -71,7 +72,8 @@ void ListaDisparos::colision(Caja c)
 	{
 		if(Interaccion::colision(*(lista[i]),c))
 		{
-			lista[i]->setVel(0,0);			
+			lista[i]->setVel(0,0);		
+			eliminar(i);
 		}
 	}
 }
