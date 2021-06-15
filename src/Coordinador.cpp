@@ -55,10 +55,11 @@ void Coordinador::tecla(unsigned char key)
 	{
 		if (key == 'e')
 		{
+			ETSIDI::play("sonidos/morse.wav");
 			mundo.~Mundo();
 			mundo.inicializa();
 			estado = JUEGO;
-
+			ETSIDI::playMusica("sonidos/resumen_2.mp3", true);
 		}
 
 		if (key == 's')
@@ -69,7 +70,7 @@ void Coordinador::tecla(unsigned char key)
 		mundo.tecla(key);
 		if (key == 'p')
 			estado = PAUSA;
-
+		ETSIDI::stopMusica();
 	}
 	else if (estado == GAMEOVER)
 	{
@@ -85,6 +86,7 @@ void Coordinador::tecla(unsigned char key)
 	{
 		if (key == 'c')
 			estado = JUEGO;
+		ETSIDI::playMusica("sonidos/resumen_2.mp3", true);
 	}
 }
 void Coordinador::teclaEspecial(unsigned char key)

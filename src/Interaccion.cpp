@@ -156,6 +156,7 @@ bool Interaccion::colision(Obstaculo o, Disparo d)
 		return true;
 	return false;
 }
+
 bool Interaccion::colision(Obstaculo o, DisparoEspecial de)
 {
 	/*
@@ -193,18 +194,14 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 					b.dibuja();
 				*/
 				}
-				ETSIDI::play("sonidos/impacto.wav");
+				ETSIDI::play("sonidos/explosion fireworks1.wav");
 			}
 	return false;
 }
 
 bool Interaccion::colision(Hombre h, Bonus b) {
-
-
-
 	float distancia = (h.getPos() - b.getPos()).modulo();
 	if (distancia < b.getRadio())
 		return true;
 	return false;
-
 }

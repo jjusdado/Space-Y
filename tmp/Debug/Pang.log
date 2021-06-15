@@ -1,2 +1,10 @@
-﻿  Vida.cpp
-  Pang.vcxproj -> C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\bin\Pang.exe
+﻿  Bonus.cpp
+  Coordinador.cpp
+  Interaccion.cpp
+C:\Users\daniv\Desktop\FINAL SPACE\src\Interaccion.cpp(18,20): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  ListaDisparos.cpp
+  ListaObstaculo.cpp
+  Mundo.cpp
+  Pang.cpp
+  Generando código...
+  Pang.vcxproj -> C:\Users\daniv\Desktop\FINAL SPACE\bin\Pang.exe

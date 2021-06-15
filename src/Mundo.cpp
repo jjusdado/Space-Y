@@ -18,6 +18,7 @@ void Mundo::rotarOjo()
 	x_ojo=dist*cos(ang);
 	z_ojo=dist*sin(ang);
 }
+
 void Mundo::dibuja()
 {
 	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
@@ -27,14 +28,10 @@ void Mundo::dibuja()
 	//aqui es donde hay que poner el codigo de dibujo
 	caja.dibuja();
 	hombre.dibuja();
-	disparos.dibuja();
-	
+	disparos.dibuja();	
 	bonus.dibuja();
-
-	disparo_especial.dibuja();
-	
+	//disparo_especial.dibuja();	
 	obstaculos.dibuja();
-
 	vidas.dibuja();
 
 	ETSIDI::setTextColor(1,1,0);
@@ -52,14 +49,9 @@ void Mundo::dibuja()
 		for (int k = 0; k < ETSIDI::lanzaDado(3,1); k++) //de 1 a 3 obstaculos por columna  
 		{ 
 			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
-		}
-		
-		j = j + 1;
-	
+		}		
+		j = j + 1;	
 	}
-
-	
-
 }
 
 void Mundo::mueve()
@@ -76,7 +68,6 @@ void Mundo::mueve()
 	disparos.colision(plataforma);
 
 	obstaculos.mueve(0.025f);
-	//disparounico.mueve(0.025f);
 
 	Obstaculo *aux=obstaculos.colision(hombre);
 	if(aux!=0){
@@ -87,22 +78,17 @@ void Mundo::mueve()
 	
 	//eliminación obstaculo
 
-
-	if (Interaccion::colision(obstaculos, disparos, bonus)) {
-	
-		
+	if (Interaccion::colision(obstaculos, disparos, bonus))
+	{
 		bonus.dibuja();
-
 	}
 
-	if (Interaccion::colision(hombre, bonus)) {
-
-
+	if (Interaccion::colision(hombre, bonus)) 
+	{
 	//aqui se crea el disparo especial
 	 cargadorEsp = 5;  //carga 5 disparos especiales
-
 	}
-	
+
 	Interaccion::rebote(hombre,caja);
 }
 
@@ -122,7 +108,7 @@ void Mundo::tecla(unsigned char key)
 		switch(key)
 	{
 		case ' ':
-			{
+		{
 			if (cargadorEsp > 0) {  //si el cargador de disparos especiales está lleno
 
 				DisparoEspecial* d1 = new DisparoEspecial;
@@ -134,15 +120,14 @@ void Mundo::tecla(unsigned char key)
 				break;
 			}
 			else {
-			Disparo* d = new Disparo();
-			Vector2D pos = hombre.getPos();
-			d->setPos(pos.x, pos.y, pos.x, pos.y);
-			disparos.agregar(d);
-			//hombre.setVel(0,0);
-			ETSIDI::play("sonidos/disparo.wav");
-			break;
-				}
+				Disparo* d = new Disparo();
+				Vector2D pos = hombre.getPos();
+				d->setPos(pos.x, pos.y, pos.x, pos.y);
+				disparos.agregar(d);
+				ETSIDI::play("sonidos/explosion fireworks1.wav");
+				break;
 			}
+		}
 		case 's':
 		{
 			DisparoEspecial* d1 = new DisparoEspecial;
@@ -150,17 +135,17 @@ void Mundo::tecla(unsigned char key)
 			d1->setPos(pos.x, pos.y, pos.x, pos.y);
 
 			disparos.agregar(d1);
-
+			ETSIDI::play("sonidos/explosion fireworks2.wav");
 			break;
 		}
 	}
 
 }
+
 void Mundo::teclaEspecial(unsigned char key)
 {
 	switch(key)
 	{
-
 	case GLUT_KEY_UP:
 		hombre.setVel(0.0f, 5.0f);
 		break;
@@ -169,12 +154,13 @@ void Mundo::teclaEspecial(unsigned char key)
 		break;
 	}
 }
+
 int Mundo::getNumObstaculos()
 {
 	numeroObstaculos = obstaculos.getNumero();
 	return numeroObstaculos;
-
 }
+
 bool Mundo::cargarNivel()
 {
 	nivel++;

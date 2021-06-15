@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Hombre.h"
 #include "Caja.h"
 #include "Esfera.h"
@@ -13,7 +12,6 @@
 class Interaccion  
 {
 public:
-
 	Bonus bonus;
 	
 	Interaccion();
@@ -32,8 +30,6 @@ public:
 	static bool colision(Disparo d, Caja c);
 	static bool colision(Obstaculo o, Disparo d);
 	static bool colision(Obstaculo o, DisparoEspecial de);
-
 	static bool colision(Hombre h, Bonus b);
-
 };
 

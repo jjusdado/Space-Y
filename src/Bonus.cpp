@@ -6,7 +6,7 @@
 
 Bonus::Bonus()
 {
-	radio = 1.0f;
+	radio = 0.5f;
 	velocidad.x = -3.0f;
 	setColor(0, 0, 255);
 	posicion.x = posicion.y = -100;
