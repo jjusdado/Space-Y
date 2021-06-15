@@ -105,9 +105,19 @@ void Mundo::mueve()
 
 	if (Interaccion::colision(hombre, bonus)) 
 	{
-	//aqui se crea el disparo especial
-	 cargadorEsp = 5;  //carga 5 disparos especiales
+		int Bonusnum = 0;
+		Bonusnum = ETSIDI::lanzaDado(2, 1);
+		switch (Bonusnum) {
+		case 1:
+			cargadorEsp = 5;
+		case 2:
+			vidas.sumarVida();
+		}
+
+		//aqui se crea el disparo especial
+	   //carga 5 disparos especiales
 	 
+
 	 bonus.setPos(100, 100);
 	 bonus.dibuja();
 	 ETSIDI::play("sonidos/Bonus.mp3");

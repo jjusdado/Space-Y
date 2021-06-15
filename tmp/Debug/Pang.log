@@ -1,14 +1,4 @@
-﻿  Coordinador.cpp
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(17,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(18,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(19,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(20,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(72,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(73,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(74,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(75,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(102,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(103,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(104,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\juanj\source\repos\CARPETA\src\Coordinador.cpp(105,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+﻿  Mundo.cpp
+  Vida.cpp
+  Generando código...
   Pang.vcxproj -> C:\Users\juanj\source\repos\CARPETA\bin\Pang.exe

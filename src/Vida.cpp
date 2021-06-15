@@ -1,5 +1,6 @@
 #include "Vida.h"
 #include "glut.h"
+#include "Interaccion.h"
 
 Vida::Vida():sprite1("imagenes/vida.png", 1), sprite2("imagenes/vida.png", 1), sprite3("imagenes/vida.png", 1)
 {
