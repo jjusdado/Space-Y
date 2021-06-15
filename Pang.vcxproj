@@ -102,6 +102,7 @@
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
+    <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Bonus.h" />
@@ -123,6 +124,7 @@
     <ClInclude Include="src\Obstaculo.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Vector2D.h" />
+    <ClInclude Include="src\Vida.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
