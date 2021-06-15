@@ -8,14 +8,12 @@ class Bonus : public ObjetoMovil
 {
 	friend class Interaccion;
 public:
-
 	void dibuja();	
 	Bonus();
 	virtual ~Bonus();
 	float getRadio() { return radio; }
 	void setColor(Byte r, Byte v, Byte a);
-protected:
-	
+protected:	
 	float radio;
 	ColorRGB color;
 };

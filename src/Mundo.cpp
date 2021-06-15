@@ -87,6 +87,8 @@ void Mundo::mueve()
 	{
 	//aqui se crea el disparo especial
 	 cargadorEsp = 5;  //carga 5 disparos especiales
+	 bonus.setPos(100, 100);
+	 bonus.dibuja();
 	}
 
 	Interaccion::rebote(hombre,caja);
@@ -139,7 +141,6 @@ void Mundo::tecla(unsigned char key)
 			break;
 		}
 	}
-
 }
 
 void Mundo::teclaEspecial(unsigned char key)

@@ -1,10 +1,2 @@
-﻿  Bonus.cpp
-  Coordinador.cpp
-  Interaccion.cpp
-C:\Users\daniv\Desktop\FINAL SPACE\src\Interaccion.cpp(18,20): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-  ListaDisparos.cpp
-  ListaObstaculo.cpp
-  Mundo.cpp
-  Pang.cpp
-  Generando código...
+﻿  Mundo.cpp
   Pang.vcxproj -> C:\Users\daniv\Desktop\FINAL SPACE\bin\Pang.exe
