@@ -186,7 +186,7 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 				d.eliminar(j);
 				
 				int r = ETSIDI::lanzaDado(5,1);
-				if (r ==5 ) {
+				if (r ==3 ) {
 					b.setPos(posb.x, posb.y);
 					return true;
 				/*
