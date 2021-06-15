@@ -8,8 +8,8 @@ Esfera::Esfera()
 {
 	radio=1.0f;
 	aceleracion.y=-9.8f;
-	velocidad.x=4;
-	velocidad.y=4;
+	velocidad.x=0;
+	velocidad.y=0;
 }
 
 Esfera::~Esfera()

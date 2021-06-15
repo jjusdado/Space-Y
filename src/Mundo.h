@@ -29,6 +29,7 @@ class Mundo
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
+	int cargadorEsp = 0;
 public: 
 	~Mundo();
 	void tecla(unsigned char key);

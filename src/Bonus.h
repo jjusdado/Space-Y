@@ -13,9 +13,11 @@ public:
 	void dibuja();	
 	Bonus();
 	virtual ~Bonus();
-private:
-	float lado;
-
-
+	float getRadio() { return radio; }
+	void setColor(Byte r, Byte v, Byte a);
+protected:
+	
+	float radio;
+	ColorRGB color;
 };
 

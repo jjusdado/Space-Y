@@ -7,10 +7,14 @@
 #include "Obstaculo.h"
 #include "ListaObstaculo.h"
 #include "ListaDisparos.h"
+#include "Bonus.h"
+#include "ETSIDI.h"
 
 class Interaccion  
 {
 public:
+
+	Bonus bonus;
 	
 	Interaccion();
 	virtual ~Interaccion();	
@@ -20,8 +24,7 @@ public:
 	static void rebote(Esfera& e, Caja c);
 	static void rebote(Hombre& h, Caja c);
 	static bool rebote(Esfera& e1, Esfera& e2);
-
-	static void colision(ListaObstaculo& o, ListaDisparos& d);
+	static bool colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b);
 
 	//funciones de informacion, no cambian los objetos, solo devuelven true si hay colision
 	static bool colision(Esfera e, Hombre h);
@@ -30,7 +33,7 @@ public:
 	static bool colision(Obstaculo o, Disparo d);
 	static bool colision(Obstaculo o, DisparoEspecial de);
 
-
+	static bool colision(Hombre h, Bonus b);
 
 };
 

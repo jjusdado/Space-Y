@@ -29,10 +29,12 @@ void Mundo::dibuja()
 	hombre.dibuja();
 	disparos.dibuja();
 	//plataforma.dibuja();
-	bonus.dibuja();
+	//bonus.dibuja();
 	esferas.dibuja();
 	//esfera_pulsante.dibuja();
 	
+	bonus.dibuja();
+
 	disparo_especial.dibuja();
 	
 	obstaculos.dibuja();
@@ -57,6 +59,8 @@ void Mundo::dibuja()
 		j = j + 1;
 	
 	}
+
+	
 
 }
 
@@ -95,11 +99,20 @@ void Mundo::mueve()
 	//eliminación obstaculo
 
 
-	Interaccion::colision(obstaculos, disparos);
+	if (Interaccion::colision(obstaculos, disparos, bonus)) {
+	
+		
+		bonus.dibuja();
+
+	}
+
+	if (Interaccion::colision(hombre, bonus)) {
 
 
+	//aqui se crea el disparo especial
+	 cargadorEsp = 5;  //carga 5 disparos especiales
 
-
+	}
 	
 	Interaccion::rebote(hombre,caja);
 }
@@ -137,13 +150,25 @@ void Mundo::tecla(unsigned char key)
 	{
 		case ' ':
 			{
- 				Disparo* d=new Disparo();
-				Vector2D pos=hombre.getPos();
-				d->setPos(pos.x,pos.y,pos.x,pos.y);
-				disparos.agregar(d);
-				//hombre.setVel(0,0);
-				ETSIDI::play("sonidos/disparo.wav");
+			if (cargadorEsp > 0) {  //si el cargador de disparos especiales está lleno
+
+				DisparoEspecial* d1 = new DisparoEspecial;
+				Vector2D pos = hombre.getPos();
+				d1->setPos(pos.x, pos.y, pos.x, pos.y);
+
+				disparos.agregar(d1);
+				cargadorEsp--;            //gasta un disparo especial con cada pulsacion del espacio
 				break;
+			}
+			else {
+			Disparo* d = new Disparo();
+			Vector2D pos = hombre.getPos();
+			d->setPos(pos.x, pos.y, pos.x, pos.y);
+			disparos.agregar(d);
+			//hombre.setVel(0,0);
+			ETSIDI::play("sonidos/disparo.wav");
+			break;
+				}
 			}
 		case 's':
 		{

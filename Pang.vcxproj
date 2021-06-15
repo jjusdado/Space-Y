@@ -92,6 +92,7 @@
     <ClCompile Include="src\EsferaPulsante.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaBonus.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\ListaEsferas.cpp" />
     <ClCompile Include="src\ListaObstaculo.cpp" />
@@ -113,6 +114,7 @@
     <ClInclude Include="src\EsferaPulsante.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaBonus.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\ListaEsferas.h" />
     <ClInclude Include="src\ListaObstaculo.h" />

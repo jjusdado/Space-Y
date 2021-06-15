@@ -6,13 +6,11 @@
 
 Bonus::Bonus()
 {
-	//movimiento gravitatorio
-	//velocidad vertical inicial
-	
-	velocidad.x=-5.0f;
-	lado=0.5f;
+	radio = 1.0f;
+	velocidad.x = -3.0f;
+	setColor(0, 0, 255);
+	posicion.x = posicion.y = -100;
 }
-
 Bonus::~Bonus()
 {
 
@@ -21,13 +19,13 @@ Bonus::~Bonus()
 void Bonus::dibuja()
 {
 	glPushMatrix();
-	glTranslatef(posicion.x,posicion.y,0);
-	glRotatef(30,1,1,1);
-	glColor3f(	rand()/(float)RAND_MAX,
-			rand()/(float)RAND_MAX,
-			rand()/(float)RAND_MAX);//color aleatorio
-    	glutSolidCube(lado);
+	glTranslatef(posicion.x, posicion.y, 0);
+	glutSolidSphere(radio, 20, 20);
+	glTranslatef(-posicion.x, -posicion.y, 0);
 	glPopMatrix();
-
 }
 
+void Bonus::setColor(Byte r, Byte v, Byte a)
+{
+	color.set(r, v, a);
+}

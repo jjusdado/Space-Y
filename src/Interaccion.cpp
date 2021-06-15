@@ -171,16 +171,40 @@ bool Interaccion::colision(Obstaculo o, DisparoEspecial de)
 
 //listaobstaculo con listadisparos
 
-void Interaccion::colision(ListaObstaculo& o, ListaDisparos& d) {
+bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
+
+	
 
 	int numo = o.getNumero();
 	int numd = d.getNumero();
 	for (int i = numo-1; i >=  0; i--)
 		for (int j = numd-1; j >= 0; j--)
 			if (Interaccion::colision(*o.lista[i], *d.lista[j])) {
+				Vector2D posb = d.lista[j]->getPos();
 				o.eliminar(i);
 				d.eliminar(j);
+				
+				int r = ETSIDI::lanzaDado(10,1);
+				if (r ==5) {
+					b.setPos(posb.x, posb.y);
+					return true;
+				/*
+					b.setPos(posb.x, posb.y);
+					b.dibuja();
+				*/
+				}
 				ETSIDI::play("sonidos/impacto.wav");
 			}
+	return false;
 }
 
+bool Interaccion::colision(Hombre h, Bonus b) {
+
+
+
+	float distancia = (h.getPos() - b.getPos()).modulo();
+	if (distancia < b.getRadio())
+		return true;
+	return false;
+
+}
