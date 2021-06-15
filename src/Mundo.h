@@ -9,13 +9,11 @@
 #include "DisparoEspecial.h"
 #include "Obstaculo.h"
 #include "ListaObstaculo.h"
+#include "Vida.h"
 
 class Mundo
 {
-	EsferaPulsante esfera_pulsante;
 	DisparoEspecial disparo_especial;
-
-	ListaEsferas esferas;
 	ListaDisparos disparos;
 	ListaObstaculo obstaculos;
 	Hombre hombre;
@@ -23,8 +21,8 @@ class Mundo
 	Bonus bonus;
 	Pared plataforma;
 	Disparo disparounico;
-	bool impacto;
-	int numeroEsferas;
+	Vida vidas;
+	int numeroObstaculos;
 	int nivel;
 	float x_ojo;
 	float y_ojo;
@@ -38,7 +36,7 @@ public:
 	void rotarOjo();
 	void mueve();
 	void dibuja();
-	bool getImpacto();
-	int getNumEsferas();
+	int getNumObstaculos();
 	bool cargarNivel();
+	int getVidas() { return hombre.vidas; }
 };

@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #define MAX_ESFERAS 100
 
@@ -33,4 +33,4 @@ private:
 	Esfera * lista[MAX_ESFERAS];
 	int numero;
 };
-
+*/

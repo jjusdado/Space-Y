@@ -6,7 +6,7 @@
 
 Mundo::~Mundo()
 {
-	esferas.destruirContenido();
+	obstaculos.destruirContenido();
 	disparos.destruirContenido();
 }
 
@@ -28,16 +28,14 @@ void Mundo::dibuja()
 	caja.dibuja();
 	hombre.dibuja();
 	disparos.dibuja();
-	//plataforma.dibuja();
-	//bonus.dibuja();
-	esferas.dibuja();
-	//esfera_pulsante.dibuja();
 	
 	bonus.dibuja();
 
 	disparo_especial.dibuja();
 	
 	obstaculos.dibuja();
+
+	vidas.dibuja();
 
 	ETSIDI::setTextColor(1,1,0);
 	ETSIDI::setFont("fuentes/Bitwise.ttf",16);
@@ -70,12 +68,6 @@ void Mundo::mueve()
 	if(Interaccion::colision(disparo_especial,plataforma))
 		disparo_especial.setVel(0,0);
 
-
-
-	esfera_pulsante.mueve(0.025f);
-	Interaccion::rebote(esfera_pulsante,plataforma);
-	Interaccion::rebote(esfera_pulsante,caja);
-
 	hombre.mueve(0.025f);
 	bonus.mueve(0.025f);
 
@@ -86,13 +78,10 @@ void Mundo::mueve()
 	obstaculos.mueve(0.025f);
 	//disparounico.mueve(0.025f);
 
-	esferas.mueve(0.025f);
-	esferas.rebote();
-	esferas.rebote(plataforma);
-	esferas.rebote(caja);
-	Esfera *aux=esferas.colision(hombre);
+	Obstaculo *aux=obstaculos.colision(hombre);
 	if(aux!=0){
-		esferas.eliminar(aux);
+		hombre.restarvida();
+		obstaculos.eliminar(aux);
 		ETSIDI::play("sonidos/impacto.wav");
 	}
 	
@@ -126,22 +115,7 @@ void Mundo::inicializa()
 	//bonus.setPos(5.0f,5.0f);
 	//plataforma.setPos(-5.0f,9.0f,5.0f,9.0f);
 	Vector2D pos = hombre.getPos();
-	//disparo_especial.setPos(pos.x, pos.y, pos.x, pos.y);
-/*
-	Esfera *e1=new Esfera(1.5f,2,4,5,15);
-	e1->setColor(0,0,255);
-	esferas.agregar(e1); //esfera
-
-	Esfera *e2=new Esfera(2,-2,4,-5,15);
-	e2->setColor(255,255,255);
-	esferas.agregar(e2); //esfera2
-
-	for(int i=0;i<6;i++)
-	{
-		Esfera* aux=new Esfera(0.75+i*0.25,i,1+i,i,i);
-		esferas.agregar(aux);
-	} 
-	*/
+	hombre.vidas = 1;
 }
 
 void Mundo::tecla(unsigned char key)
@@ -180,21 +154,6 @@ void Mundo::tecla(unsigned char key)
 
 			break;
 		}
-		/*case '1':	
- 			esferas.agregar (new Esfera(0.5f,0,10));
-			break;
-		case '2':	
- 			esferas.agregar (new Esfera(1.0f,0,10));
-			break;
-		case '3':	
- 			esferas.agregar (new Esfera(1.5f,0,10));
-			break;
-		case '4':	
- 			esferas.agregar (new Esfera(2.0f,0,10));
-			break;
-		case 'd':
-			disparounico.dibuja();
-			break;*/
 	}
 
 }
@@ -211,50 +170,29 @@ void Mundo::teclaEspecial(unsigned char key)
 		break;
 	}
 }
-bool Mundo::getImpacto()
+int Mundo::getNumObstaculos()
 {
-
-	return impacto;
-
-}
-int Mundo::getNumEsferas()
-{
-	numeroEsferas = esferas.getNumero();
-	return numeroEsferas;
+	numeroObstaculos = obstaculos.getNumero();
+	return numeroObstaculos;
 
 }
 bool Mundo::cargarNivel()
 {
 	nivel++;
 	hombre.setPos(-8, 0);
-	esferas.destruirContenido();
+	obstaculos.destruirContenido();
 	disparos.destruirContenido();
 	if (nivel == 1)
 	{
-		plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
-		Esfera* e1 = new Esfera(1.5f, 2, 4, 5, 15);
-		e1->setColor(0, 0, 255);
-		esferas.agregar(e1); //esfera
+		obstaculos.nivel = 0;
 	}
 	if (nivel == 2)
 	{
-		plataforma.setPos(-3.0f, 6.0f, 3.0f, 6.0f);
-		plataforma.setColor(255, 0, 0);
-		EsferaPulsante* e3 = new EsferaPulsante;
-		e3->setPos(0, 12);
-		e3->setVel(5, 3);
-		esferas.agregar(e3);
+		obstaculos.nivel = 1;
 	}
 	if (nivel == 3)
 	{
-		plataforma.setPos(-10.0f, 12.0f, 4.0f, 10.0f);
-		plataforma.setColor(255, 0, 255);
-		for (int i = 0; i < 5; i++)
-		{
-			Esfera* aux = new Esfera(1.5, -5 + i, 12, i, 5);
-			aux->setColor(i * 40, 0, 255 - i * 40);
-			esferas.agregar(aux);
-		}
+		obstaculos.nivel = 2;
 	}
 	if (nivel <= 3)
 		return true;

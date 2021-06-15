@@ -1,4 +1,4 @@
-#include "ListaEsferas.h"
+/*#include "ListaEsferas.h"
 #include "Interaccion.h"
 
 ListaEsferas::ListaEsferas(void)
@@ -110,3 +110,4 @@ Esfera *ListaEsferas::operator [](int i)
 	
 	return lista[i];
 }
+*/

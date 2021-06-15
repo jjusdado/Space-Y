@@ -27,7 +27,7 @@ public:
 	static bool colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b);
 
 	//funciones de informacion, no cambian los objetos, solo devuelven true si hay colision
-	static bool colision(Esfera e, Hombre h);
+	static bool colision(Obstaculo o, Hombre h);
 	static bool colision(Disparo d, Pared p);
 	static bool colision(Disparo d, Caja c);
 	static bool colision(Obstaculo o, Disparo d);

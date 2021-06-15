@@ -4,7 +4,7 @@
 ListaObstaculo::ListaObstaculo(void)
 {
 	numero = 0;
-	for (int i = 0; i < MAX_OBSTACULOS; i++)
+	for (int i = 0; i < MAX_OBSTACULOS+200*nivel; i++)
 		lista[i] = 0;
 }
 
@@ -62,7 +62,8 @@ void ListaObstaculo::rebote(Pared p)
 
 
 
-Esfera* ListaObstaculo::colision(Hombre h)
+*/
+Obstaculo* ListaObstaculo::colision(Hombre h)
 {
 	for (int i = 0; i < numero; i++)
 	{
@@ -72,7 +73,7 @@ Esfera* ListaObstaculo::colision(Hombre h)
 	return 0; //no hay colisión
 
 }
-*/
+
 Obstaculo* ListaObstaculo::operator [](int i)
 {
 	if (i >= numero)
@@ -109,7 +110,7 @@ void ListaObstaculo::eliminar(Obstaculo* e)
 	for (int i = 0; i < numero; i++)
 		if (lista[i] == e)
 		{
-			eliminar(e);
+			eliminar(i);
 			return;
 		}
 
@@ -136,4 +137,3 @@ Obstaculo* ListaObstaculo::colision(Disparo d)
 	return 0; //no hay colisión
 
 }*/
-

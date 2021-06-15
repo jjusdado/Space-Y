@@ -1,12 +1,11 @@
 #pragma once
 
-#define MAX_OBSTACULOS 100
-
 #include "Obstaculo.h"
 #include "Caja.h"
 #include "Hombre.h"
 #include "Disparo.h"
 
+#define MAX_OBSTACULOS 100
 
 class ListaObstaculo
 {
@@ -27,12 +26,13 @@ public:
 	
 	//Obstaculo* colision(DisparoEspecial de);
 	
-	//Obstaculo* colision(Hombre h);
+	Obstaculo* colision(Hombre h);
 	//void rebote(Pared p);
 	//void rebote();
 	//void rebote(Caja caja);
 
 	int getNumero() { return numero; }
+	int nivel;
 	Obstaculo* operator[] (int index);
 
 private:

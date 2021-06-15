@@ -120,13 +120,13 @@ bool Interaccion::rebote(Esfera &esfera1, Esfera &esfera2)
 	}
 	return false;
 }
-bool Interaccion::colision(Esfera e, Hombre h)
+bool Interaccion::colision(Obstaculo o, Hombre h)
 {
 	Vector2D pos=h.getPos(); //la posicion del hombre de la base
 	pos.y+=h.getAltura()/2.0f; //posicion del centro
 
-	float distancia=(e.posicion-pos).modulo();
-	if(distancia<e.radio)
+	float distancia=(o.posicion-pos).modulo();
+	if(distancia<o.radio)
 		return true;	
 	return false;
 }

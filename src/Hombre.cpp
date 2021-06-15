@@ -24,9 +24,6 @@ void Hombre::dibuja()
 	glPushMatrix();
 	glTranslatef(posicion.x,posicion.y,0.5);
    	glColor3f(1.0f,1.0f,1.0f);
-    //glutSolidSphere(altura, 20, 20); //esfera antigua de diseño
-
-	//gestion de direccion y animacion
 
 	if((velocidad.y<0.01)&&(velocidad.y>-0.01))
 		sprite.setState(0);
@@ -44,3 +41,7 @@ void Hombre::mueve(float t)
 	sprite.loop();
 }
 
+void Hombre::restarvida()
+{
+	vidas--;
+}
