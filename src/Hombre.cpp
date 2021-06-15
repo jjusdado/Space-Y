@@ -40,8 +40,3 @@ void Hombre::mueve(float t)
 	ObjetoMovil::mueve(t);
 	sprite.loop();
 }
-
-void Hombre::restarvida()
-{
-	vidas--;
-}

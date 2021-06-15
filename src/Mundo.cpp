@@ -80,7 +80,7 @@ void Mundo::mueve()
 
 	Obstaculo *aux=obstaculos.colision(hombre);
 	if(aux!=0){
-		hombre.restarvida();
+		vidas.restarVida();
 		obstaculos.eliminar(aux);
 		ETSIDI::play("sonidos/impacto.wav");
 	}
@@ -112,10 +112,9 @@ void Mundo::inicializa()
 	y_ojo=7.5;
 	z_ojo=30;
 
-	//bonus.setPos(5.0f,5.0f);
-	//plataforma.setPos(-5.0f,9.0f,5.0f,9.0f);
+
 	Vector2D pos = hombre.getPos();
-	hombre.vidas = 1;
+	vidas.vidas = 3;
 }
 
 void Mundo::tecla(unsigned char key)

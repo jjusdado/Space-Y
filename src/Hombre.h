@@ -13,9 +13,7 @@ public:
 	Hombre();
 	virtual ~Hombre();
 	float getAltura(){return altura;}
-	void restarvida();
 
-	int vidas;
 private:
 	SpriteSequence sprite;
 	float altura;

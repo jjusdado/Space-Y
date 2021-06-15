@@ -38,5 +38,5 @@ public:
 	void dibuja();
 	int getNumObstaculos();
 	bool cargarNivel();
-	int getVidas() { return hombre.vidas; }
+	int getVidas() { return vidas.vidas; }
 };

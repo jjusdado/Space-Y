@@ -1,10 +1,14 @@
 #include "Vida.h"
 #include "glut.h"
 
-Vida::Vida():sprite("imagenes/Ship5.png", 1)
+Vida::Vida():sprite1("imagenes/Ship5.png", 1), sprite2("imagenes/Ship5.png", 1), sprite3("imagenes/Ship5.png", 1)
 {
-	sprite.setCenter(0, 0);
-	sprite.setSize(2, 2);
+	sprite1.setCenter(0, 0);
+	sprite1.setSize(2, 2);
+	sprite2.setCenter(0, 0);
+	sprite2.setSize(2, 2);
+	sprite3.setCenter(0, 0);
+	sprite3.setSize(2, 2);
 }
 
 Vida::~Vida()
@@ -14,16 +18,42 @@ Vida::~Vida()
 
 void Vida::dibuja()
 {
-	glPushMatrix();
-	glTranslatef(-12, 13, 0);
-	glColor3f(1.0f, 1.0f, 1.0f);
+		if (vidas >= 1) {
+			glPushMatrix();
+			glTranslatef(-12, 13, 0);
+			glColor3f(1.0f, 1.0f, 1.0f);
 
-	sprite.draw();
+			sprite1.draw();
 
-	glPopMatrix();
+			glPopMatrix();
+		}
+		if (vidas >= 2 )
+		{
+			glPushMatrix();
+			glTranslatef(-10, 13, 0);
+			glColor3f(1.0f, 1.0f, 1.0f);
+
+			sprite2.draw();
+
+			glPopMatrix();
+		}
+		if (vidas == 3) {
+			glPushMatrix();
+			glTranslatef(-8, 13, 0);
+			glColor3f(1.0f, 1.0f, 1.0f);
+
+			sprite3.draw();
+			glPopMatrix();
+		}
 }
 
 void Vida::restarVida()
 {
 	vidas--;
+}
+
+void Vida::sumarVida()
+{
+	if (vidas < MAX_VIDAS)
+		vidas++;
 }
