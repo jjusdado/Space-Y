@@ -27,7 +27,7 @@ public:
 	//Obstaculo* colision(DisparoEspecial de);
 	
 	Obstaculo* colision(Hombre h);
-	//void rebote(Pared p);
+	void rebote(Pared p);
 	//void rebote();
 	//void rebote(Caja caja);
 

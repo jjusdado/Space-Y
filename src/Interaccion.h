@@ -23,6 +23,7 @@ public:
 	static void rebote(Hombre& h, Caja c);
 	static bool rebote(Esfera& e1, Esfera& e2);
 	static bool colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b);
+	static bool rebote(Obstaculo& o, Pared p);
 
 	//funciones de informacion, no cambian los objetos, solo devuelven true si hay colision
 	static bool colision(Obstaculo o, Hombre h);

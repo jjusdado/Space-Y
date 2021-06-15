@@ -101,6 +101,7 @@ void Coordinador::mueve()
 		mundo.mueve();
 		if (mundo.getNumObstaculos() == 0)
 		{
+		
 			if (!mundo.cargarNivel())
 				estado = FIN;
 

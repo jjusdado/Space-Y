@@ -53,16 +53,18 @@ void ListaObstaculo::rebote()
 		for (int j = i + 1; j < numero; j++)
 			Interaccion::rebote(*(lista[i]), *(lista[j]));
 }
-
+*/
 void ListaObstaculo::rebote(Pared p)
 {
-	for (int i = 0; i < numero; i++)
-		Interaccion::rebote(*(lista[i]), p);
+	for (int i = 0; i < numero; i++) {
+		
+	if (Interaccion::rebote(*(lista[i]), p)) eliminar(i);
+	}
 }
 
 
 
-*/
+
 Obstaculo* ListaObstaculo::colision(Hombre h)
 {
 	for (int i = 0; i < numero; i++)

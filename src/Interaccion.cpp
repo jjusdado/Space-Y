@@ -205,3 +205,15 @@ bool Interaccion::colision(Hombre h, Bonus b) {
 		return true;
 	return false;
 }
+
+bool Interaccion::rebote(Obstaculo& o, Pared p)
+{
+	Vector2D dir;
+	float dif = p.distancia(o.posicion, &dir) - o.radio;
+	if (dif <= 0.0f)
+	{
+		
+		return true;
+	}
+	return false;
+}

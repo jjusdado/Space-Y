@@ -20,6 +20,7 @@ class Mundo
 	Caja caja;
 	Bonus bonus;
 	Pared plataforma;
+	Pared pared_detras;
 	Disparo disparounico;
 	Vida vidas;
 	int numeroObstaculos;
@@ -28,6 +29,7 @@ class Mundo
 	float y_ojo;
 	float z_ojo;
 	int cargadorEsp = 0;
+	int x = 3; //para la funcion de crear obstaculos
 public: 
 	~Mundo();
 	void tecla(unsigned char key);

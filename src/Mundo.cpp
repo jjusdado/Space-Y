@@ -26,6 +26,20 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
+
+		//función obstáculos
+	/*
+	int j = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
+		{
+			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+		}
+		j = j + 3;
+	}
+
+	*/
 	caja.dibuja();
 	hombre.dibuja();
 	disparos.dibuja();	
@@ -42,17 +56,7 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf",12);
 	ETSIDI::printxy("Christian, Dani, Dani, Juan y Pedro",-10,16.4);
 
-	//función obstáculos
-	int j = 0;
-	for (int i = 0; i <100; i++) 
-	{
-		for (int k = 0; k < ETSIDI::lanzaDado(3,1); k++) //de 1 a 3 obstaculos por columna  
-		{ 
-			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
-		}		
-		j = j + 3;	
 	}
-}
 
 void Mundo::mueve()
 {
@@ -91,7 +95,10 @@ void Mundo::mueve()
 	 bonus.dibuja();
 	}
 
+	obstaculos.rebote(pared_detras);
 	Interaccion::rebote(hombre,caja);
+
+	//if (obstaculos.getNumero() == 0) cargarNivel();
 }
 
 void Mundo::inicializa()
@@ -100,9 +107,24 @@ void Mundo::inicializa()
 	y_ojo=7.5;
 	z_ojo=30;
 
+	pared_detras.setPos(-10.0f, 0, -10.0f, 15.0f);
 
 	Vector2D pos = hombre.getPos();
 	vidas.vidas = 3;
+	nivel = 0;
+	cargarNivel();
+	/*
+	int j = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
+		{
+			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+		}
+		j = j + x;
+	}
+	nivel = 0;
+	*/
 }
 
 void Mundo::tecla(unsigned char key)
@@ -174,10 +196,32 @@ bool Mundo::cargarNivel()
 	if (nivel == 1)
 	{
 		obstaculos.nivel = 0;
+		//x = 3;
+		int j = 0;
+		for (int i = 0; i < 100; i++)
+		{
+			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
+			{
+				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+			}
+			j = j + 3;
+		}
+	//	nivel = 0;
 	}
 	if (nivel == 2)
 	{
 		obstaculos.nivel = 1;
+		//x = 1;
+		int j = 0;
+		for (int i = 0; i < 100; i++)
+		{
+			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
+			{
+				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+			}
+			j = j + 1;
+		}
+		//nivel = 0;
 	}
 	if (nivel == 3)
 	{
