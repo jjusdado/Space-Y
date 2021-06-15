@@ -4,8 +4,10 @@
 #include "glut.h"
 
 
-Bonus::Bonus()
+Bonus::Bonus() :sprite("imagenes/klipartz.com.png", 1)
 {
+	sprite.setCenter(0, 0);
+	sprite.setSize(1, 1);
 	radio = 0.5f;
 	velocidad.x = -3.0f;
 	setColor(0, 0, 255);
@@ -18,11 +20,9 @@ Bonus::~Bonus()
 
 void Bonus::dibuja()
 {
-	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0);
-	glutSolidSphere(radio, 20, 20);
+	sprite.draw();
 	glTranslatef(-posicion.x, -posicion.y, 0);
-	glPopMatrix();
 }
 
 void Bonus::setColor(Byte r, Byte v, Byte a)

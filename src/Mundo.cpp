@@ -110,6 +110,7 @@ void Mundo::mueve()
 	 
 	 bonus.setPos(100, 100);
 	 bonus.dibuja();
+	 ETSIDI::play("sonidos/Bonus.mp3");
 	}
 
 	obstaculos.rebote(pared_detras);
@@ -207,6 +208,7 @@ int Mundo::getNumObstaculos()
 bool Mundo::cargarNivel()
 {
 	nivel++;
+	ETSIDI::play("sonidos/NEXTLEVEL.wav");
 	hombre.setPos(-8, 0);
 	obstaculos.destruirContenido();
 	disparos.destruirContenido();

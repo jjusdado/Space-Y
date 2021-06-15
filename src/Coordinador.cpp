@@ -6,6 +6,7 @@ void Coordinador::dibuja()
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+		
 		glEnable(GL_TEXTURE_2D);
 
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/galaxia_victoria.png").id);
@@ -61,6 +62,7 @@ void Coordinador::dibuja()
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
 		glEnable(GL_TEXTURE_2D);
+		ETSIDI::play("sonidos/GAMEOVER.mp3");
 
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_1.png").id);
 		glDisable(GL_LIGHTING);
@@ -180,6 +182,7 @@ void Coordinador::mueve()
 			if (!mundo.cargarNivel())
 
 				estado = FIN;
+
 
 
 		}
