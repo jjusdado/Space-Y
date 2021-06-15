@@ -1,4 +1,3 @@
-﻿  Mundo.cpp
-  Vida.cpp
-  Generando código...
-  Pang.vcxproj -> C:\Users\juanj\source\repos\CARPETA\bin\Pang.exe
+﻿  Interaccion.cpp
+C:\Users\Danie\OneDrive\Documentos\Infor\Trabajo\SPACEYYY\src\Interaccion.cpp(18,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Pang.vcxproj -> C:\Users\Danie\OneDrive\Documentos\Infor\Trabajo\SPACEYYY\bin\Pang.exe

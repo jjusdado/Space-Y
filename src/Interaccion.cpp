@@ -126,7 +126,7 @@ bool Interaccion::colision(Obstaculo o, Hombre h)
 	pos.y+=h.getAltura()/2.0f; //posicion del centro
 
 	float distancia=(o.posicion-pos).modulo();
-	if(distancia<1.25*o.radio)
+	if(distancia<0.8+o.radio)
 		return true;	
 	return false;
 }

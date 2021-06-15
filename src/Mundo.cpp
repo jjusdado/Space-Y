@@ -105,13 +105,15 @@ void Mundo::mueve()
 
 	if (Interaccion::colision(hombre, bonus)) 
 	{
-		int Bonusnum = 0;
-		Bonusnum = ETSIDI::lanzaDado(2, 1);
+		bool Bonusnum = 0;
+		Bonusnum = ETSIDI::lanzaMoneda();
 		switch (Bonusnum) {
-		case 1:
+		case TRUE:
 			cargadorEsp = 5;
-		case 2:
+			break;
+		case FALSE:
 			vidas.sumarVida();
+			break;
 		}
 
 		//aqui se crea el disparo especial
@@ -227,7 +229,7 @@ bool Mundo::cargarNivel()
 		obstaculos.nivel = 0;
 		//x = 3;
 		int j = 0;
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 200; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
@@ -242,7 +244,7 @@ bool Mundo::cargarNivel()
 		obstaculos.nivel = 1;
 	
 		int j = 0;
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 300; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
@@ -256,7 +258,7 @@ bool Mundo::cargarNivel()
 	{
 		
 		int j = 0;
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 600; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{

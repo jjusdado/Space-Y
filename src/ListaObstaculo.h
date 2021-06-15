@@ -5,7 +5,7 @@
 #include "Hombre.h"
 #include "Disparo.h"
 
-#define MAX_OBSTACULOS 100
+#define MAX_OBSTACULOS 500
 
 class ListaObstaculo
 {
