@@ -1,7 +1,7 @@
 #include "Vida.h"
 #include "glut.h"
 
-Vida::Vida():sprite1("imagenes/Ship5.png", 1), sprite2("imagenes/Ship5.png", 1), sprite3("imagenes/Ship5.png", 1)
+Vida::Vida():sprite1("imagenes/vida.png", 1), sprite2("imagenes/vida.png", 1), sprite3("imagenes/vida.png", 1)
 {
 	sprite1.setCenter(0, 0);
 	sprite1.setSize(2, 2);
