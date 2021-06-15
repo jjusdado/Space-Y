@@ -185,8 +185,8 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 				o.eliminar(i);
 				d.eliminar(j);
 				
-				int r = ETSIDI::lanzaDado(10,1);
-				if (r ==5 || r ==1 || r == 2 || r == 3 || r == 4) {
+				int r = ETSIDI::lanzaDado(5,1);
+				if (r ==5 ) {
 					b.setPos(posb.x, posb.y);
 					return true;
 				/*
@@ -201,7 +201,7 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 
 bool Interaccion::colision(Hombre h, Bonus b) {
 	float distancia = (h.getPos() - b.getPos()).modulo();
-	if (distancia < b.getRadio())
+	if (distancia < b.getRadio()+1)
 		return true;
 	return false;
 }

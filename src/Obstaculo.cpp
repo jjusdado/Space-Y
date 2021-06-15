@@ -16,14 +16,14 @@ Obstaculo::~Obstaculo()
 
 }
 
-Obstaculo::Obstaculo(float rad, float x, float y) :sprite("imagenes/Meteor_02.png", 1)
+Obstaculo::Obstaculo(float rad, float x, float y, float v) :sprite("imagenes/Meteor_02.png", 1)
 {
 	sprite.setCenter(0, 0);
 	sprite.setSize(1, 1);
 	radio = rad;
 	posicion.x = x;
 	posicion.y = y;
-	velocidad.x = -5.0f;
+	velocidad.x = v;
 }
 
 void Obstaculo::dibuja()

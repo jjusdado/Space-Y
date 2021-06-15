@@ -11,7 +11,7 @@ class Obstaculo :public ObjetoMovil
 friend class Interaccion;
 public:
 	Obstaculo();
-	Obstaculo(float rad, float x, float y);
+	Obstaculo(float rad, float x, float y, float v);
 	virtual ~Obstaculo();
 	void dibuja();
 	void setColor(Byte r, Byte v, Byte a);

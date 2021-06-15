@@ -56,6 +56,22 @@ void Mundo::dibuja()
 	ETSIDI::setFont("fuentes/Bitwise.ttf",12);
 	ETSIDI::printxy("Christian, Dani, Dani, Juan y Pedro",-10,16.4);
 
+	if (nivel == 1){
+		ETSIDI::setTextColor(0, 0, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::printxy("Nivel 1", 10, -2);
+	}
+	else if (nivel == 2){
+	ETSIDI::setTextColor(0, 0, 1);
+	ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+	ETSIDI::printxy("Nivel 2", 10, -2);
+	}
+	else if (nivel == 3){
+	ETSIDI::setTextColor(0, 0, 1);
+	ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+	ETSIDI::printxy("Nivel 3", 10, -2);
+	}
+
 	}
 
 void Mundo::mueve()
@@ -91,6 +107,7 @@ void Mundo::mueve()
 	{
 	//aqui se crea el disparo especial
 	 cargadorEsp = 5;  //carga 5 disparos especiales
+	 
 	 bonus.setPos(100, 100);
 	 bonus.dibuja();
 	}
@@ -107,7 +124,7 @@ void Mundo::inicializa()
 	y_ojo=7.5;
 	z_ojo=30;
 
-	pared_detras.setPos(-10.0f, 0, -10.0f, 15.0f);
+	pared_detras.setPos(-15.0f, 0, -15.0f, 15.0f);
 
 	Vector2D pos = hombre.getPos();
 	vidas.vidas = 3;
@@ -202,30 +219,40 @@ bool Mundo::cargarNivel()
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1), -5.0f));
 			}
 			j = j + 3;
 		}
-	//	nivel = 0;
+		
 	}
 	if (nivel == 2)
 	{
 		obstaculos.nivel = 1;
-		//x = 1;
+	
 		int j = 0;
 		for (int i = 0; i < 100; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
+				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1),-6.5f));
 			}
-			j = j + 1;
+			j = j + 2;
 		}
-		//nivel = 0;
+		
 	}
 	if (nivel == 3)
 	{
-		obstaculos.nivel = 2;
+		
+		int j = 0;
+		for (int i = 0; i < 100; i++)
+		{
+			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
+			{
+				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1), -8.0f));
+			}
+			j = j + 1;
+		}
+		
 	}
 	if (nivel <= 3)
 		return true;
