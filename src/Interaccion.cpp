@@ -67,9 +67,7 @@ bool Interaccion::colision(Obstaculo o, DisparoEspecial de)
 //listaobstaculo con listadisparos
 
 bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
-
 	
-
 	int numo = o.getNumero();
 	int numd = d.getNumero();
 	for (int i = numo-1; i >=  0; i--)
@@ -78,8 +76,8 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 				Vector2D posb = d.lista[j]->getPos();
 				o.eliminar(i);
 				d.eliminar(j);
-				
-				int r = ETSIDI::lanzaDado(6,1);
+
+				int r = ETSIDI::lanzaDado(10,1);
 				if (r == 3 ) {
 					b.setPos(posb.x, posb.y);
 					return true;
@@ -105,5 +103,17 @@ bool Interaccion::rebote(Obstaculo& o, Pared p)
 		
 		return true;
 	}
+	return false;
+}
+
+bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d)
+{
+	int numo = o.getNumero();
+	int numd = d.getNumero();
+	for (int i = numo - 1; i >= 0; i--)
+		for (int j = numd - 1; j >= 0; j--)
+			if (Interaccion::colision(*o.lista[i], *d.lista[j])) {
+				return true;
+			}
 	return false;
 }

@@ -164,6 +164,9 @@ void Mundo::mueve()
 	
 	//eliminación obstaculo
 
+	if (Interaccion::colision(obstaculos, disparos))
+		puntuacion += 1;
+
 	if (Interaccion::colision(obstaculos, disparos, bonus))
 	{
 		bonus.dibuja();
@@ -282,12 +285,13 @@ bool Mundo::cargarNivel()
 
 	bonus.setPos(100, 100);
 	bonus.dibuja();
+	puntuacion += 20;
 
 	if (nivel == 1)
 	{
 		cargadorEsp = 0;
 		int j = 10;
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 75; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
@@ -301,7 +305,7 @@ bool Mundo::cargarNivel()
 	if (nivel == 2)
 	{
 		int j = 10;
-		for (int i = 0; i < 300; i++)
+		for (int i = 0; i < 150; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
@@ -315,7 +319,7 @@ bool Mundo::cargarNivel()
 	{
 		
 		int j = 10;
-		for (int i = 0; i < 600; i++)
+		for (int i = 0; i < 250; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{

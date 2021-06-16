@@ -30,7 +30,7 @@ class Mundo
 	float y_ojo;
 	float z_ojo;
 	int cargadorEsp = 0;
-	int puntuacion = 0;
+	int puntuacion = -20;//al cargar el nivel suma 20
 	char buffer[10];
 public: 
 	~Mundo();

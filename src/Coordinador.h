@@ -4,7 +4,7 @@
 
 class Coordinador
 {
-	int puntuacion = 0;
+	int puntuacion = -20; //al cargar el nivel suma 20
 	char buffer[10];
 public:
 	Coordinador();
