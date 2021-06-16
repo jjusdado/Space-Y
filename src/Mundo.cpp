@@ -26,25 +26,10 @@ void Mundo::dibuja()
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
 	//aqui es donde hay que poner el codigo de dibujo
-
-		//función obstáculos
-	/*
-	int j = 0;
-	for (int i = 0; i < 100; i++)
-	{
-		for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
-		{
-			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
-		}
-		j = j + 3;
-	}
-
-	*/
 	caja.dibuja(nivel);
 	hombre.dibuja();
 	disparos.dibuja();	
-	bonus.dibuja();
-	//disparo_especial.dibuja();	
+	bonus.dibuja();	
 	obstaculos.dibuja();
 	vidas.dibuja();
 
@@ -76,7 +61,7 @@ void Mundo::dibuja()
 
 		glEnable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -94,7 +79,7 @@ void Mundo::dibuja()
 
 			glEnable(GL_TEXTURE_2D);
 
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
 			glDisable(GL_LIGHTING);
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
@@ -111,7 +96,7 @@ void Mundo::dibuja()
 
 				glEnable(GL_TEXTURE_2D);
 
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
 				glDisable(GL_LIGHTING);
 				glBegin(GL_POLYGON);
 				glColor3f(1, 1, 1);
@@ -128,7 +113,7 @@ void Mundo::dibuja()
 
 					glEnable(GL_TEXTURE_2D);
 
-					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
 					glDisable(GL_LIGHTING);
 					glBegin(GL_POLYGON);
 					glColor3f(1, 1, 1);
@@ -145,7 +130,7 @@ void Mundo::dibuja()
 
 						glEnable(GL_TEXTURE_2D);
 
-						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
 						glDisable(GL_LIGHTING);
 						glBegin(GL_POLYGON);
 						glColor3f(1, 1, 1);

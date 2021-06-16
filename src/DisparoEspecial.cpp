@@ -26,6 +26,5 @@ void DisparoEspecial::dibuja()
 	else if (sprite.getState() == 0)
 		sprite.setState(1, false);
 	sprite.draw();
-	//glutSolidSphere(radio, 20, 20);
 	glPopMatrix();
 }

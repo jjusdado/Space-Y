@@ -1,3 +1,45 @@
-﻿  Mundo.cpp
-C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Mundo.cpp(376): warning C4715: 'Mundo::cargarNivel': no todas las rutas de acceso de control devuelven un valor
+﻿  Bonus.cpp
+  Caja.cpp
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(43,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(44,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(45,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(46,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(60,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(61,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(62,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(63,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(77,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(78,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(79,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Caja.cpp(80,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  ColorRGB.cpp
+  Coordinador.cpp
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(17,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(18,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(19,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(20,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(73,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(74,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(75,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(76,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(107,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(108,46): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(109,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Coordinador.cpp(110,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  Disparo.cpp
+  DisparoEspecial.cpp
+  Hombre.cpp
+  Interaccion.cpp
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Interaccion.cpp(18,20): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  ListaDisparos.cpp
+  ListaObstaculo.cpp
+  Mundo.cpp
+  ObjetoMovil.cpp
+  Obstaculo.cpp
+  Pang.cpp
+  Pared.cpp
+  Vector2D.cpp
+  Vida.cpp
+  Generando código...
+C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\src\Mundo.cpp(361): warning C4715: 'Mundo::cargarNivel': no todas las rutas de acceso de control devuelven un valor
   Pang.vcxproj -> C:\Users\chris\OneDrive\Escritorio\Cuarto curso\2 Semestre\Informática Industrial\Nueva carpeta\bin\Pang.exe

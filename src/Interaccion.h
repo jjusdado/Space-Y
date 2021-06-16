@@ -1,7 +1,6 @@
 #pragma once
 #include "Hombre.h"
 #include "Caja.h"
-#include "Esfera.h"
 #include "Disparo.h"
 #include "Obstaculo.h"
 #include "ListaObstaculo.h"
@@ -18,10 +17,7 @@ public:
 	virtual ~Interaccion();	
 
 	//funciones que modifican (paso por referencia) los objetos que se les pasa como parametro	
-	static bool rebote(Esfera& e, Pared p);
-	static void rebote(Esfera& e, Caja c);
 	static void rebote(Hombre& h, Caja c);
-	static bool rebote(Esfera& e1, Esfera& e2);
 	static bool colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b);
 	static bool rebote(Obstaculo& o, Pared p);
 

@@ -41,19 +41,6 @@ bool ListaDisparos::agregar(Disparo *d)
 	return true;
 }
 
-/*bool ListaDisparos::agregar(DisparoEspecial* de)
-{
-	for (int i = 0; i < numero; i++)//para evitar que se añada una esfera ya existente
-		if (lista[i] == de)
-			return false;
-
-	if (numero < MAX_DISPAROS)
-		lista[numero++] = de;
-	else
-		return false;
-	return true;
-}*/
-
 void ListaDisparos::colision(Pared p)
 {
 	for(int i=0;i<numero;i++)
@@ -119,8 +106,3 @@ void ListaDisparos::eliminar(Disparo* e)
 			return;
 		}
 }
-/*void ListaDisparos::eliminar(DisparoEspecial* de)
-{
-
-
-}*/

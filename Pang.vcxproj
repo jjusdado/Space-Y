@@ -88,13 +88,9 @@
     <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\DisparoEspecial.cpp" />
-    <ClCompile Include="src\Esfera.cpp" />
-    <ClCompile Include="src\EsferaPulsante.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
-    <ClCompile Include="src\ListaBonus.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
-    <ClCompile Include="src\ListaEsferas.cpp" />
     <ClCompile Include="src\ListaObstaculo.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\ObjetoMovil.cpp" />
@@ -111,13 +107,9 @@
     <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\DisparoEspecial.h" />
-    <ClInclude Include="src\Esfera.h" />
-    <ClInclude Include="src\EsferaPulsante.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
-    <ClInclude Include="src\ListaBonus.h" />
     <ClInclude Include="src\ListaDisparos.h" />
-    <ClInclude Include="src\ListaEsferas.h" />
     <ClInclude Include="src\ListaObstaculo.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\ObjetoMovil.h" />
