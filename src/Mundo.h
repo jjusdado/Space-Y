@@ -30,6 +30,8 @@ class Mundo
 	float y_ojo;
 	float z_ojo;
 	int cargadorEsp = 0;
+	int puntuacion = 0;
+	char buffer[10];
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
@@ -40,4 +42,6 @@ public:
 	int getNumObstaculos();
 	bool cargarNivel();
 	int getVidas() { return vidas.vidas; }
+	int getPuntuacion() { return puntuacion; }
+	void setPuntuacion(int p) { puntuacion += p; }
 };

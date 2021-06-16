@@ -186,9 +186,10 @@ void Mundo::mueve()
 	   //carga 5 disparos especiales
 	 
 
-	 bonus.setPos(100, 100);
-	 bonus.dibuja();
-	 ETSIDI::play("sonidos/Bonus.mp3");
+		bonus.setPos(100, 100);
+		bonus.dibuja();
+		ETSIDI::play("sonidos/Bonus.mp3");
+		puntuacion += 5;
 	}
 
 	obstaculos.rebote(pared_detras);

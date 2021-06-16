@@ -45,10 +45,7 @@ void Coordinador::dibuja()
 	else if (estado == JUEGO)
 	{
 		mundo.dibuja();
-		ETSIDI::setTextColor(1, 1, 0);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		sprintf(buffer, "Puntuacion: %d", puntuacion);
-		ETSIDI::printxy(buffer, 0, 17);
+
 	}
 	else if (estado == PAUSA)
 	{
@@ -88,7 +85,10 @@ void Coordinador::dibuja()
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 3);
-
+		ETSIDI::setTextColor(1, 1, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		sprintf(buffer, "Puntuacion: %d", mundo.getPuntuacion());
+		ETSIDI::printxy(buffer, 0, 17);
 	
 	}
 	else if (estado == FIN)

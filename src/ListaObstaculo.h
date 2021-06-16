@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Obstaculo.h"
 #include "Caja.h"
 #include "Hombre.h"
