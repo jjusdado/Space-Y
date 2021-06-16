@@ -4,8 +4,6 @@
 ListaObstaculo::ListaObstaculo(void)
 {
 	numero = 0;
-	//for (int i = 0; i < MAX_OBSTACULOS+200*nivel; i++)
-	//	lista[i] = 0;
 }
 
 
@@ -16,7 +14,7 @@ ListaObstaculo::~ListaObstaculo(void)
 
 bool ListaObstaculo::agregar(Obstaculo* e)
 {
-	for (int i = 0; i < numero; i++)//para evitar que se añada un obstaculo ya existente
+	for (int i = 0; i < numero; i++)     //para evitar que se añada un obstaculo ya existente
 		if (lista[i] == e)
 			return false;
 
@@ -39,21 +37,6 @@ void ListaObstaculo::mueve(float t)
 		lista[i]->mueve(t);
 }
 
-/*
-void ListaObstaculo::rebote(Caja caja)
-{
-	for (int i = 0; i < numero; i++)
-		Interaccion::rebote(*(lista[i]), caja);
-
-}
-
-void ListaObstaculo::rebote()
-{
-	for (int i = 0; i < numero - 1; i++)
-		for (int j = i + 1; j < numero; j++)
-			Interaccion::rebote(*(lista[i]), *(lista[j]));
-}
-*/
 void ListaObstaculo::rebote(Pared p)
 {
 	for (int i = 0; i < numero; i++) {
@@ -61,9 +44,6 @@ void ListaObstaculo::rebote(Pared p)
 	if (Interaccion::rebote(*(lista[i]), p)) eliminar(i);
 	}
 }
-
-
-
 
 Obstaculo* ListaObstaculo::colision(Hombre h)
 {
@@ -128,14 +108,3 @@ Obstaculo* ListaObstaculo::colision(Disparo d)
 	return 0; //no hay colisión
 
 }
-
-/*Obstaculo* ListaObstaculo::colision(DisparoEspecial de)
-{
-	for (int i = 0; i < numero; i++)
-	{
-		if (Interaccion::colision(*(lista[i]), de))
-			return lista[i];
-	}
-	return 0; //no hay colisión
-
-}*/

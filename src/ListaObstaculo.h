@@ -24,12 +24,9 @@ public:
 
 	Obstaculo* colision(Disparo d);
 	
-	//Obstaculo* colision(DisparoEspecial de);
 	
 	Obstaculo* colision(Hombre h);
 	void rebote(Pared p);
-	//void rebote();
-	//void rebote(Caja caja);
 
 	int getNumero() { return numero; }
 	int nivel;

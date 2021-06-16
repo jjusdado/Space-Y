@@ -36,9 +36,8 @@ void Coordinador::dibuja()
 		ETSIDI::printxy("CONTROLES:", -5, 6);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 10);
 		ETSIDI::printxy("DISPARO: ESPACIO", -5, 5);
-		ETSIDI::printxy("DISPARO ESPECIAL: S", -5, 4);
-		ETSIDI::printxy("MOVIMIENTO ASCENDENTE: CURSOR ARRIBA", -5, 3);
-		ETSIDI::printxy("MOVIMIENTO DESCENDENTE: CURSOR ABAJO", -5, 2);
+		ETSIDI::printxy("MOVIMIENTO ASCENDENTE: CURSOR ARRIBA", -5, 4);
+		ETSIDI::printxy("MOVIMIENTO DESCENDENTE: CURSOR ABAJO", -5, 3);
 		//
 
 	}
@@ -56,7 +55,6 @@ void Coordinador::dibuja()
 	}
 	else if (estado == GAMEOVER)
 	{
-		//mundo.dibuja();
 		
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
@@ -91,7 +89,6 @@ void Coordinador::dibuja()
 	}
 	else if (estado == FIN)
 	{
-		//mundo.dibuja();
 		
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)

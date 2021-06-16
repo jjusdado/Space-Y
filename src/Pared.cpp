@@ -2,9 +2,6 @@
 
 #include "Pared.h"
 #include "glut.h"
-//////////////////////////////////////////////////////////////////////
-// Construction/Destruction
-//////////////////////////////////////////////////////////////////////
 
 Pared::Pared()
 {
@@ -58,7 +55,7 @@ float Pared::distancia(Vector2D punto, Vector2D *direccion)
 	else
 		dir=u-v*valor;
 	distancia=dir.modulo();
-	if(direccion!=0) //si nos dan un vector…
+	if(direccion!=0)
 		*direccion=dir.unitario();
 	return distancia;
 }

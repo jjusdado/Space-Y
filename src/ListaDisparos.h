@@ -12,25 +12,14 @@ class ListaDisparos
 public:
 	ListaDisparos();
 	virtual ~ListaDisparos();
-	
 	bool agregar(Disparo* d);
-	
-	//bool agregar(DisparoEspecial* de);
-	
 	void mueve(float t);
 	void dibuja();
-
-	void eliminar(Disparo* e);
-	
-	//void eliminar(DisparoEspecial* de);
-	
+	void eliminar(Disparo* e);	
 	void eliminar(int index);
 	void destruirContenido();
-
-
 	void colision(Pared p);
 	void colision(Caja c);
-
 	int getNumero() { return numero; }
 	Disparo* operator[] (int index);
 

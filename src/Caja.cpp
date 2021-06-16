@@ -11,13 +11,12 @@ Caja::Caja()
 
 	techo.setColor(000,000,000);
 	techo.setPos(-15.0f,15.0f,100.0f,15.0f);
-	
-    pared_dcha.setColor(0,150,0);
-	pared_dcha.setPos(-15.0f,0,-15.0f,15.0f);
 
-    pared_izq.setColor(0,150,0);
-	pared_izq.setPos(15.0f,0,15.0f,15.0f);
+	pared_dcha.setColor(0, 150, 0);
+	pared_dcha.setPos(-15.0f, 0, -15.0f, 15.0f);
 
+	pared_izq.setColor(0, 150, 0);
+	pared_izq.setPos(15.0f, 0, 15.0f, 15.0f);
 }
 
 Caja::~Caja()

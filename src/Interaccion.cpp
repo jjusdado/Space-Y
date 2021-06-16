@@ -49,11 +49,6 @@ bool Interaccion::colision(Disparo d, Caja c)
 
 bool Interaccion::colision(Obstaculo o, Disparo d)
 {
-	/*
-	Vector2D poso = o.getPos(); //la posicion del hombre de la base
-	Vector2D posd = d.getPos();
-	//pos.y += h.getAltura() / 2.0f; //posicion del centro
-	*/
 	float distancia = (d.posicion - o.posicion).modulo();
 	if (distancia < (d.radio+o.radio))
 		return true;
@@ -62,11 +57,7 @@ bool Interaccion::colision(Obstaculo o, Disparo d)
 
 bool Interaccion::colision(Obstaculo o, DisparoEspecial de)
 {
-	/*
-	Vector2D poso = o.getPos(); //la posicion del hombre de la base
-	Vector2D posd = d.getPos();
-	//pos.y += h.getAltura() / 2.0f; //posicion del centro
-	*/
+
 	float distancia = (de.posicion - o.posicion).modulo();
 	if (distancia < (de.radio + o.radio))
 		return true;
@@ -88,14 +79,10 @@ bool Interaccion::colision(ListaObstaculo& o, ListaDisparos& d, Bonus& b) {
 				o.eliminar(i);
 				d.eliminar(j);
 				
-				int r = ETSIDI::lanzaDado(5,1);
-				if (r ==3 ) {
+				int r = ETSIDI::lanzaDado(6,1);
+				if (r == 3 ) {
 					b.setPos(posb.x, posb.y);
 					return true;
-				/*
-					b.setPos(posb.x, posb.y);
-					b.dibuja();
-				*/
 				}
 				ETSIDI::play("sonidos/explosion fireworks1.wav");
 			}

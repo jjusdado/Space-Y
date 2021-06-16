@@ -11,7 +11,6 @@ Obstaculo::Obstaculo() :sprite1("imagenes/Meteor_02.png", 1), sprite2("imagenes/
 	sprite3.setCenter(0, 0);
 	sprite3.setSize(1, 1);
 	radio = 1.0f;
-	color.b = color.g = color.r = 255;
 	velocidad.x = -5.0f;
 }
 
@@ -54,9 +53,3 @@ void Obstaculo::setRadio(float r)
 		r = 0.1F;
 	radio = r;
 }
-
-void Obstaculo::setColor(Byte r, Byte v, Byte a)
-{
-	color.set(r, v, a);
-}
-

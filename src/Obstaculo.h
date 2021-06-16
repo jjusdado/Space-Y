@@ -1,6 +1,6 @@
 #pragma once
+#include "ETSIDI.h"
 #include "Vector2D.h"
-#include "ColorRGB.h"
 #include "ObjetoMovil.h"
 #include "ETSIDI.h"
 
@@ -14,11 +14,9 @@ public:
 	Obstaculo(float rad, float x, float y, float v, int n);
 	virtual ~Obstaculo();
 	void dibuja();
-	void setColor(Byte r, Byte v, Byte a);
 	void setRadio(float r);
 		
 protected:
-	ColorRGB color;
 	float radio;
 	SpriteSequence sprite1, sprite2, sprite3;
 	int nivel;

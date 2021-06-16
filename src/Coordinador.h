@@ -5,7 +5,6 @@ class Coordinador
 {
 public:
 	Coordinador();
-	//virtual ~CoordinadorPang();
 	void teclaEspecial(unsigned char key);
 	void tecla(unsigned char key);
 	void mueve();

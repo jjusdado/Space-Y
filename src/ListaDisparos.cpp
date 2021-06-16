@@ -1,6 +1,3 @@
-// ListaDisparos.cpp: implementation of the ListaDisparos class.
-//
-//////////////////////////////////////////////////////////////////////
 
 #include "ListaDisparos.h"
 #include "Interaccion.h"
@@ -30,7 +27,7 @@ void ListaDisparos::mueve(float t)
 
 bool ListaDisparos::agregar(Disparo *d)
 {
-	for(int i=0;i<numero;i++)//para evitar que se añada una esfera ya existente
+	for(int i=0;i<numero;i++)     //para evitar que se añada un disparo ya existente
 		if(lista[i]==d)
 			return false;
 
