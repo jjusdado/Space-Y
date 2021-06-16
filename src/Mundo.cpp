@@ -40,7 +40,7 @@ void Mundo::dibuja()
 	}
 
 	*/
-	caja.dibuja();
+	caja.dibuja(nivel);
 	hombre.dibuja();
 	disparos.dibuja();	
 	bonus.dibuja();
@@ -62,14 +62,14 @@ void Mundo::dibuja()
 		ETSIDI::printxy("Nivel 1", 10, -2);
 	}
 	else if (nivel == 2){
-	ETSIDI::setTextColor(0, 0, 1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
-	ETSIDI::printxy("Nivel 2", 10, -2);
+		ETSIDI::setTextColor(0, 0, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::printxy("Nivel 2", 10, -2);
 	}
 	else if (nivel == 3){
-	ETSIDI::setTextColor(0, 0, 1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
-	ETSIDI::printxy("Nivel 3", 10, -2);
+		ETSIDI::setTextColor(0, 0, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
+		ETSIDI::printxy("Nivel 3", 10, -2);
 	}
 
 	if (cargadorEsp>0) {
@@ -331,7 +331,7 @@ bool Mundo::cargarNivel()
 		//obstaculos.nivel = 1;
 		//x = 3;
 		int j = 10;
-		for (int i = 0; i < 200; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
@@ -339,6 +339,7 @@ bool Mundo::cargarNivel()
 			}
 			j = j + 3;
 		}
+
 		
 	}
 	if (nivel == 2)
@@ -346,7 +347,7 @@ bool Mundo::cargarNivel()
 		//obstaculos.nivel = 1;
 	
 		int j = 10;
-		for (int i = 0; i < 300; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{

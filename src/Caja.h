@@ -7,7 +7,7 @@ class Caja
 {
 	friend class Interaccion;
 public:
-	void dibuja();
+	void dibuja(int i);
 	Caja();
 	virtual ~Caja();
 private:
