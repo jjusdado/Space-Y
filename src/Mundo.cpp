@@ -239,7 +239,7 @@ void Mundo::tecla(unsigned char key)
 			break;
 		}
 	}
-	/*case 's':
+	case 's':
 	{
 		DisparoEspecial* d1 = new DisparoEspecial;
 		Vector2D pos = hombre.getPos();
@@ -248,7 +248,7 @@ void Mundo::tecla(unsigned char key)
 		disparos.agregar(d1);
 		ETSIDI::play("sonidos/explosion fireworks2.wav");
 		break;
-	}*/
+	}
 	}
 }
 
@@ -284,6 +284,7 @@ bool Mundo::cargarNivel()
 
 	if (nivel == 1)
 	{
+		cargadorEsp = 0;
 		int j = 10;
 		for (int i = 0; i < 100; i++)
 		{

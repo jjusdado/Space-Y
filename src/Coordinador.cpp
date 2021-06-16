@@ -45,6 +45,10 @@ void Coordinador::dibuja()
 	else if (estado == JUEGO)
 	{
 		mundo.dibuja();
+		ETSIDI::setTextColor(1, 1, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
+		sprintf(buffer, "Puntuacion: %d", puntuacion);
+		ETSIDI::printxy(buffer, 0, 17);
 	}
 	else if (estado == PAUSA)
 	{
