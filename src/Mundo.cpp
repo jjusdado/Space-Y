@@ -290,6 +290,7 @@ bool Mundo::cargarNivel()
 	if (nivel == 1)
 	{
 		cargadorEsp = 0;
+		puntuacion = 0;
 		int j = 10;
 		for (int i = 0; i < 75; i++)
 		{
