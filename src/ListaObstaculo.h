@@ -29,7 +29,6 @@ public:
 	void rebote(Pared p);
 
 	int getNumero() { return numero; }
-	int nivel;
 	Obstaculo* operator[] (int index);
 
 private:

@@ -10,15 +10,6 @@ Mundo::~Mundo()
 	disparos.destruirContenido();
 }
 
-void Mundo::rotarOjo()
-{
-	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
-	float ang=atan2(z_ojo,x_ojo);
-	ang+=0.05f;
-	x_ojo=dist*cos(ang);
-	z_ojo=dist*sin(ang);
-}
-
 void Mundo::dibuja()
 {
 	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
@@ -159,8 +150,6 @@ void Mundo::dibuja()
 void Mundo::mueve()
 {
 	disparo_especial.mueve(0.025f);
-	//if(Interaccion::colision(disparo_especial,plataforma))
-	//	disparo_especial.setVel(0,0);
 
 	hombre.mueve(0.025f);
 	bonus.mueve(0.025f);
@@ -210,7 +199,6 @@ void Mundo::mueve()
 	obstaculos.rebote(pared_detras);
 	Interaccion::rebote(hombre,caja);
 
-	//if (obstaculos.getNumero() == 0) cargarNivel();
 }
 
 void Mundo::inicializa()
@@ -225,18 +213,6 @@ void Mundo::inicializa()
 	vidas.vidas = 3;
 	nivel = 0;
 	cargarNivel();
-	/*
-	int j = 0;
-	for (int i = 0; i < 100; i++)
-	{
-		for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
-		{
-			obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1)));
-		}
-		j = j + x;
-	}
-	nivel = 0;
-	*/
 }
 
 void Mundo::tecla(unsigned char key)
@@ -268,7 +244,7 @@ void Mundo::tecla(unsigned char key)
 				break;
 			}
 		}
-		case 's':
+		/*case 's':
 		{
 			DisparoEspecial* d1 = new DisparoEspecial;
 			Vector2D pos = hombre.getPos();
@@ -277,7 +253,7 @@ void Mundo::tecla(unsigned char key)
 			disparos.agregar(d1);
 			ETSIDI::play("sonidos/explosion fireworks2.wav");
 			break;
-		}
+		}*/
 	}
 }
 
@@ -313,14 +289,12 @@ bool Mundo::cargarNivel()
 
 	if (nivel == 1)
 	{
-		//obstaculos.nivel = 1;
-		//x = 3;
 		int j = 10;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 200; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1), -5.0f,1));
+				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1), -5.0f,nivel));
 			}
 			j = j + 3;
 		}
@@ -329,14 +303,12 @@ bool Mundo::cargarNivel()
 	}
 	if (nivel == 2)
 	{
-		//obstaculos.nivel = 1;
-	
 		int j = 10;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 400; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1),-6.5f,2));
+				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1),-6.5f,nivel));
 			}
 			j = j + 2;
 		}
@@ -350,7 +322,7 @@ bool Mundo::cargarNivel()
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1), -8.0f,3));
+				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1), -8.0f,nivel));
 			}
 			j = j + 1;
 		}

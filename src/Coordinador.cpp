@@ -27,7 +27,7 @@ void Coordinador::dibuja()
 		ETSIDI::printxy("SPACE Y", -5, 12);
 
 		ETSIDI::setTextColor(1, 1, 1);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
 		ETSIDI::printxy("PULSE -E- PARA EMPEZAR", -5, 9);
 		ETSIDI::printxy("PULSE -S- PARA SALIR", -5, 8);
 
@@ -38,7 +38,9 @@ void Coordinador::dibuja()
 		ETSIDI::printxy("DISPARO: ESPACIO", -5, 5);
 		ETSIDI::printxy("MOVIMIENTO ASCENDENTE: CURSOR ARRIBA", -5, 4);
 		ETSIDI::printxy("MOVIMIENTO DESCENDENTE: CURSOR ABAJO", -5, 3);
-		//
+		ETSIDI::setTextColor(0, 1, 0);
+		ETSIDI::printxy("JUEGO CREADO POR", -3, 2);
+		ETSIDI::printxy("Christian Stantchev, Daniel Escalada, Daniel Parrilla, Juan Jusdado, Pedro Menchero", -10, 1);
 
 	}
 	else if (estado == JUEGO)

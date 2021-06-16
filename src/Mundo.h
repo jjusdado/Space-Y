@@ -7,6 +7,10 @@
 #include "Obstaculo.h"
 #include "ListaObstaculo.h"
 #include "Vida.h"
+#include "glut.h"
+#include <cmath>
+#include "Interaccion.h"
+#include "ETSIDI.h"
 
 class Mundo
 {
@@ -26,13 +30,11 @@ class Mundo
 	float y_ojo;
 	float z_ojo;
 	int cargadorEsp = 0;
-	int x = 3; //para la funcion de crear obstaculos
 public: 
 	~Mundo();
 	void tecla(unsigned char key);
 	void teclaEspecial(unsigned char key);
 	void inicializa();
-	void rotarOjo();
 	void mueve();
 	void dibuja();
 	int getNumObstaculos();
