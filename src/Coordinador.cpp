@@ -6,9 +6,8 @@ void Coordinador::dibuja()
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
-		
-		glEnable(GL_TEXTURE_2D);
 
+		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/galaxia_victoria.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
@@ -63,8 +62,7 @@ void Coordinador::dibuja()
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
 			
 		glEnable(GL_TEXTURE_2D);
-		ETSIDI::play("sonidos/GAMEOVER.mp3");
-
+		ETSIDI::stopMusica();
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_1.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
@@ -97,7 +95,6 @@ void Coordinador::dibuja()
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
 			
 		glEnable(GL_TEXTURE_2D);
-
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_victoria.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
@@ -121,7 +118,7 @@ void Coordinador::dibuja()
 Coordinador::Coordinador()
 {
 	estado = INICIO;
-	ETSIDI::playMusica("sonidos/resumen_2.mp3", true);
+	ETSIDI::playMusica("sonidos/AMBIENTE.mp3", true);
 }
 void Coordinador::tecla(unsigned char key)
 {
@@ -131,12 +128,10 @@ void Coordinador::tecla(unsigned char key)
 
 		if (key == 'e')
 		{
-			ETSIDI::play("sonidos/morse.wav");
-
+			ETSIDI::playMusica("sonidos/AMBIENTE.mp3", true);
 			mundo.~Mundo();
 			mundo.inicializa();
 			estado = JUEGO;
-			ETSIDI::stopMusica();
 		}
 
 		if (key == 's')
@@ -152,19 +147,25 @@ void Coordinador::tecla(unsigned char key)
 	else if (estado == GAMEOVER)
 	{
 
-		if (key == 'c')
+		if (key == 'c') {
+			ETSIDI::playMusica("sonidos/AMBIENTE.mp3", true);
 			estado = INICIO;
+		}
 	}
 	else if (estado == FIN)
 	{
 
-		if (key == 'c')
+		if (key == 'c') {
+			ETSIDI::playMusica("sonidos/AMBIENTE.mp3", true);
 			estado = INICIO;
+		}
 	}
 	else if (estado == PAUSA)
 	{
-		if (key == 'c')
+		if (key == 'c') {
+			ETSIDI::play("sonidos/AMBIENTE.mp3");
 			estado = JUEGO;
+		}
 
 	}
 }
@@ -183,16 +184,20 @@ void Coordinador::mueve()
 		if (mundo.getNumObstaculos() == 0)
 		{
 
-			if (!mundo.cargarNivel())
+			if (!mundo.cargarNivel()) 
+			{
 
 				estado = FIN;
-
-
-
+				ETSIDI::stopMusica();
+				ETSIDI::play("sonidos/WIN.wav");
+			}
 		}
-		if (mundo.getVidas() < 1)
-
+		if (mundo.getVidas() < 1) 
+		{
+			ETSIDI::stopMusica();
+			ETSIDI::play("sonidos/GAME_OVER.wav");
 			estado = GAMEOVER;
+		}
 
 	}
 

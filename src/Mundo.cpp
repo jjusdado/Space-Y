@@ -27,11 +27,6 @@ void Mundo::dibuja()
 	ETSIDI::setTextColor(1,1,0);
 	ETSIDI::setFont("fuentes/Bitwise.ttf",16);
 	ETSIDI::printxy("SPACE Y", -10,17);
-	
-	ETSIDI::setTextColor(1,1,1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf",12);
-	ETSIDI::printxy("Christian, Dani, Dani, Juan y Pedro",-10,16.4);
-
 	if (nivel == 1){
 		ETSIDI::setTextColor(0, 0, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
@@ -290,7 +285,7 @@ bool Mundo::cargarNivel()
 	if (nivel == 1)
 	{
 		int j = 10;
-		for (int i = 0; i < 200; i++)
+		for (int i = 0; i < 100; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
@@ -304,7 +299,7 @@ bool Mundo::cargarNivel()
 	if (nivel == 2)
 	{
 		int j = 10;
-		for (int i = 0; i < 400; i++)
+		for (int i = 0; i < 300; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
