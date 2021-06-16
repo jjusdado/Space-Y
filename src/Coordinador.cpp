@@ -112,9 +112,11 @@ void Coordinador::dibuja()
 
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("ENHORABUENA, ¡Has triunfado!", -5, 10);
-		ETSIDI::printxy("Pulsa -C- para continuar", -5, 9);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 30);
+		ETSIDI::printxy("ENHORABUENA", -7, 10);
+		ETSIDI::printxy("¡Has logrado sobrevivir!", -9, 8);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 17);
+		ETSIDI::printxy("Pulsa -C- para continuar", -5, 6);
 	}
 
 
@@ -132,7 +134,8 @@ void Coordinador::tecla(unsigned char key)
 
 		if (key == 'e')
 		{
-			ETSIDI::playMusica("sonidos/AMBIENTE.mp3", true);
+			ETSIDI::play("sonidos/morse.wav");
+			ETSIDI::stopMusica();
 			mundo.~Mundo();
 			mundo.inicializa();
 			estado = JUEGO;
@@ -167,7 +170,7 @@ void Coordinador::tecla(unsigned char key)
 	else if (estado == PAUSA)
 	{
 		if (key == 'c') {
-			ETSIDI::play("sonidos/AMBIENTE.mp3");
+			
 			estado = JUEGO;
 		}
 
