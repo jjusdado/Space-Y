@@ -47,7 +47,7 @@ void Mundo::dibuja()
 
 		glEnable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/icono_bonus.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -65,7 +65,7 @@ void Mundo::dibuja()
 
 			glEnable(GL_TEXTURE_2D);
 
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/icono_bonus.png").id);
 			glDisable(GL_LIGHTING);
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
@@ -82,7 +82,7 @@ void Mundo::dibuja()
 
 				glEnable(GL_TEXTURE_2D);
 
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/icono_bonus.png").id);
 				glDisable(GL_LIGHTING);
 				glBegin(GL_POLYGON);
 				glColor3f(1, 1, 1);
@@ -99,7 +99,7 @@ void Mundo::dibuja()
 
 					glEnable(GL_TEXTURE_2D);
 
-					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/icono_bonus.png").id);
 					glDisable(GL_LIGHTING);
 					glBegin(GL_POLYGON);
 					glColor3f(1, 1, 1);
@@ -116,7 +116,7 @@ void Mundo::dibuja()
 
 						glEnable(GL_TEXTURE_2D);
 
-						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/icono_bonus.png").id);
 						glDisable(GL_LIGHTING);
 						glBegin(GL_POLYGON);
 						glColor3f(1, 1, 1);

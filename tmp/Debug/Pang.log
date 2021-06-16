@@ -1,3 +1,3 @@
-﻿  Mundo.cpp
-C:\Users\daniv\Desktop\Ultimisima\src\Mundo.cpp(334): warning C4715: 'Mundo::cargarNivel': no todas las rutas de acceso de control devuelven un valor
-  Pang.vcxproj -> C:\Users\daniv\Desktop\Ultimisima\bin\Pang.exe
+﻿  Coordinador.cpp
+C:\Users\Danie\OneDrive\Documentos\Infor\Trabajo\Trabajo_Final\src\Coordinador.cpp(90,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Pang.vcxproj -> C:\Users\Danie\OneDrive\Documentos\Infor\Trabajo\Trabajo_Final\bin\Pang.exe

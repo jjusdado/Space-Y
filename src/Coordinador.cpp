@@ -79,16 +79,16 @@ void Coordinador::dibuja()
 		glDisable(GL_TEXTURE_2D);
 		ETSIDI::setTextColor(1, 0, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 35);
-		ETSIDI::printxy("GAMEOVER", -7, 8);
+		ETSIDI::printxy("GAMEOVER", -5, 15);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
-		ETSIDI::printxy("TU NAVE HA SIDO DERROTADA", -10, 6);
+		ETSIDI::printxy("TU NAVE HA SIDO DERROTADA", -8, 13);
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 3);
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
 		sprintf(buffer, "Puntuacion: %d", mundo.getPuntuacion());
-		ETSIDI::printxy(buffer, 0, 17);
+		ETSIDI::printxy(buffer, -3, 8);
 	
 	}
 	else if (estado == FIN)
