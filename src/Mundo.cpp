@@ -52,7 +52,7 @@ void Mundo::dibuja()
 
 		glEnable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -70,7 +70,7 @@ void Mundo::dibuja()
 
 			glEnable(GL_TEXTURE_2D);
 
-			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
 			glDisable(GL_LIGHTING);
 			glBegin(GL_POLYGON);
 			glColor3f(1, 1, 1);
@@ -87,7 +87,7 @@ void Mundo::dibuja()
 
 				glEnable(GL_TEXTURE_2D);
 
-				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
 				glDisable(GL_LIGHTING);
 				glBegin(GL_POLYGON);
 				glColor3f(1, 1, 1);
@@ -104,7 +104,7 @@ void Mundo::dibuja()
 
 					glEnable(GL_TEXTURE_2D);
 
-					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
+					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
 					glDisable(GL_LIGHTING);
 					glBegin(GL_POLYGON);
 					glColor3f(1, 1, 1);
@@ -121,7 +121,7 @@ void Mundo::dibuja()
 
 						glEnable(GL_TEXTURE_2D);
 
-						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Missile_2.png").id);
+						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
 						glDisable(GL_LIGHTING);
 						glBegin(GL_POLYGON);
 						glColor3f(1, 1, 1);
@@ -217,43 +217,43 @@ void Mundo::inicializa()
 
 void Mundo::tecla(unsigned char key)
 {
-		switch(key)
+	switch (key)
 	{
-		case ' ':
-		{
-			if (cargadorEsp > 0) {  //si el cargador de disparos especiales está lleno
+	case ' ':
+	{
+		if (cargadorEsp > 0) {  //si el cargador de disparos especiales está lleno
 
-				DisparoEspecial* d1 = new DisparoEspecial;
-				Vector2D pos = hombre.getPos();
-				d1->setPos(pos.x, pos.y, pos.x, pos.y);
-
-				disparos.agregar(d1);
-				cargadorEsp--;            //gasta un disparo especial con cada pulsacion del espacio
-				ETSIDI::play("sonidos/explosion fireworks2.wav");
-				break;
-			}
-			else {
-				if (disparos.getNumero() < 1) {
-					Disparo* d = new Disparo();
-					Vector2D pos = hombre.getPos();
-					d->setPos(pos.x, pos.y, pos.x, pos.y);
-					disparos.agregar(d);
-					ETSIDI::play("sonidos/explosion fireworks1.wav");
-					break;
-				}
-				break;
-			}
-		}
-		/*case 's':
-		{
 			DisparoEspecial* d1 = new DisparoEspecial;
 			Vector2D pos = hombre.getPos();
 			d1->setPos(pos.x, pos.y, pos.x, pos.y);
 
 			disparos.agregar(d1);
+			cargadorEsp--;            //gasta un disparo especial con cada pulsacion del espacio
 			ETSIDI::play("sonidos/explosion fireworks2.wav");
 			break;
-		}*/
+		}
+		else {
+			if (disparos.getNumero() < 1) {
+				Disparo* d = new Disparo();
+				Vector2D pos = hombre.getPos();
+				d->setPos(pos.x, pos.y, pos.x, pos.y);
+				disparos.agregar(d);
+				ETSIDI::play("sonidos/explosion fireworks1.wav");
+				break;
+			}
+			break;
+		}
+	}
+	/*case 's':
+	{
+		DisparoEspecial* d1 = new DisparoEspecial;
+		Vector2D pos = hombre.getPos();
+		d1->setPos(pos.x, pos.y, pos.x, pos.y);
+
+		disparos.agregar(d1);
+		ETSIDI::play("sonidos/explosion fireworks2.wav");
+		break;
+	}*/
 	}
 }
 
