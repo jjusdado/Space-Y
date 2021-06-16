@@ -72,13 +72,110 @@ void Mundo::dibuja()
 	ETSIDI::printxy("Nivel 3", 10, -2);
 	}
 
+	if (cargadorEsp>0) {
+
+		glEnable(GL_TEXTURE_2D);
+
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+
+		glTexCoord2d(0, 1);		glVertex3f(-14, 0.5, 0.1);
+		glTexCoord2d(1, 1);		glVertex3f(-13, 0.5, 0.1);
+		glTexCoord2d(1, 0);		glVertex3f(-13, 1.5, 0.1);
+		glTexCoord2d(0, 0);		glVertex3f(-14, 1.5, 0.1);
+		glEnd();
+
+		glEnable(GL_LIGHTING);
+
+
+		if (cargadorEsp > 1) {
+
+			glEnable(GL_TEXTURE_2D);
+
+			glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+			glDisable(GL_LIGHTING);
+			glBegin(GL_POLYGON);
+			glColor3f(1, 1, 1);
+
+			glTexCoord2d(0, 1);		glVertex3f(-14, 2, 0.1);
+			glTexCoord2d(1, 1);		glVertex3f(-13, 2, 0.1);
+			glTexCoord2d(1, 0);		glVertex3f(-13, 3, 0.1);
+			glTexCoord2d(0, 0);		glVertex3f(-14, 3, 0.1);
+			glEnd();
+
+			glEnable(GL_LIGHTING);
+
+			if (cargadorEsp > 2) {
+
+				glEnable(GL_TEXTURE_2D);
+
+				glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+				glDisable(GL_LIGHTING);
+				glBegin(GL_POLYGON);
+				glColor3f(1, 1, 1);
+
+				glTexCoord2d(0, 1);		glVertex3f(-14, 3.5, 0.1);
+				glTexCoord2d(1, 1);		glVertex3f(-13, 3.5, 0.1);
+				glTexCoord2d(1, 0);		glVertex3f(-13, 4.5, 0.1);
+				glTexCoord2d(0, 0);		glVertex3f(-14, 4.5, 0.1);
+				glEnd();
+
+				glEnable(GL_LIGHTING);
+
+				if (cargadorEsp > 3) {
+
+					glEnable(GL_TEXTURE_2D);
+
+					glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/pngegg.png").id);
+					glDisable(GL_LIGHTING);
+					glBegin(GL_POLYGON);
+					glColor3f(1, 1, 1);
+
+					glTexCoord2d(0, 1);		glVertex3f(-14, 5, 0.1);
+					glTexCoord2d(1, 1);		glVertex3f(-13, 5, 0.1);
+					glTexCoord2d(1, 0);		glVertex3f(-13, 6, 0.1);
+					glTexCoord2d(0, 0);		glVertex3f(-14, 6, 0.1);
+					glEnd();
+
+					glEnable(GL_LIGHTING);
+
+					if (cargadorEsp > 4) {
+
+						glEnable(GL_TEXTURE_2D);
+
+						glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Damage_Bonus.png").id);
+						glDisable(GL_LIGHTING);
+						glBegin(GL_POLYGON);
+						glColor3f(1, 1, 1);
+
+						glTexCoord2d(0, 1);		glVertex3f(-14, 6.5, 0.1);
+						glTexCoord2d(1, 1);		glVertex3f(-13, 6.5, 0.1);
+						glTexCoord2d(1, 0);		glVertex3f(-13, 7.5, 0.1);
+						glTexCoord2d(0, 0);		glVertex3f(-14, 7.5, 0.1);
+						glEnd();
+
+						glEnable(GL_LIGHTING);
+
+
+					}
+				}
+			}
+			
+		}
+	}
+
+
+	
+
 	}
 
 void Mundo::mueve()
 {
 	disparo_especial.mueve(0.025f);
-	if(Interaccion::colision(disparo_especial,plataforma))
-		disparo_especial.setVel(0,0);
+	//if(Interaccion::colision(disparo_especial,plataforma))
+	//	disparo_especial.setVel(0,0);
 
 	hombre.mueve(0.025f);
 	bonus.mueve(0.025f);
@@ -171,6 +268,7 @@ void Mundo::tecla(unsigned char key)
 
 				disparos.agregar(d1);
 				cargadorEsp--;            //gasta un disparo especial con cada pulsacion del espacio
+				ETSIDI::play("sonidos/explosion fireworks2.wav");
 				break;
 			}
 			else {
@@ -221,19 +319,23 @@ bool Mundo::cargarNivel()
 {
 	nivel++;
 	ETSIDI::play("sonidos/NEXTLEVEL.wav");
-	hombre.setPos(-8, 0);
+	hombre.setPos(-10, 5.0f);
 	obstaculos.destruirContenido();
 	disparos.destruirContenido();
+
+	bonus.setPos(100, 100);
+	bonus.dibuja();
+
 	if (nivel == 1)
 	{
-		obstaculos.nivel = 0;
+		//obstaculos.nivel = 1;
 		//x = 3;
-		int j = 0;
+		int j = 10;
 		for (int i = 0; i < 200; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1), -5.0f));
+				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1), -5.0f,1));
 			}
 			j = j + 3;
 		}
@@ -241,14 +343,14 @@ bool Mundo::cargarNivel()
 	}
 	if (nivel == 2)
 	{
-		obstaculos.nivel = 1;
+		//obstaculos.nivel = 1;
 	
-		int j = 0;
+		int j = 10;
 		for (int i = 0; i < 300; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1),-6.5f));
+				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1),-6.5f,2));
 			}
 			j = j + 2;
 		}
@@ -257,18 +359,17 @@ bool Mundo::cargarNivel()
 	if (nivel == 3)
 	{
 		
-		int j = 0;
+		int j = 10;
 		for (int i = 0; i < 600; i++)
 		{
 			for (int k = 0; k < ETSIDI::lanzaDado(3, 1); k++) //de 1 a 3 obstaculos por columna  
 			{
-				obstaculos.agregar(new Obstaculo(0.5f, j, ETSIDI::lanzaDado(15, 1), -8.0f));
+				obstaculos.agregar(new Obstaculo(1.0f, j, ETSIDI::lanzaDado(15, 1), -8.0f,3));
 			}
 			j = j + 1;
 		}
 		
 	}
-	if (nivel <= 3)
-		return true;
-	return false;
+	if (nivel <= 3) return true;
+	if (nivel==4) return false;
 }

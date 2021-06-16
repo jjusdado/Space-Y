@@ -57,10 +57,11 @@ void Coordinador::dibuja()
 	else if (estado == GAMEOVER)
 	{
 		//mundo.dibuja();
-
+		
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+			
 		glEnable(GL_TEXTURE_2D);
 		ETSIDI::play("sonidos/GAMEOVER.mp3");
 
@@ -85,16 +86,20 @@ void Coordinador::dibuja()
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 15);
 		ETSIDI::printxy("Pulsa -C- para continuar", -5, 3);
+
+	
 	}
 	else if (estado == FIN)
 	{
 		//mundo.dibuja();
+		
 		gluLookAt(0, 7.5, 30, // posicion del ojo
 			0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
 			0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+			
 		glEnable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_victoria.jpeg").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo_victoria.png").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);

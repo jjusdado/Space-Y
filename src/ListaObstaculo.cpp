@@ -4,8 +4,8 @@
 ListaObstaculo::ListaObstaculo(void)
 {
 	numero = 0;
-	for (int i = 0; i < MAX_OBSTACULOS+200*nivel; i++)
-		lista[i] = 0;
+	//for (int i = 0; i < MAX_OBSTACULOS+200*nivel; i++)
+	//	lista[i] = 0;
 }
 
 

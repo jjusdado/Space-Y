@@ -8,7 +8,7 @@ Bonus::Bonus() :sprite("imagenes/klipartz.com.png", 1)
 {
 	sprite.setCenter(0, 0);
 	sprite.setSize(1, 1);
-	radio = 0.5f;
+	radio = 0.8f;
 	velocidad.x = -3.0f;
 	setColor(0, 0, 255);
 	posicion.x = posicion.y = -100;

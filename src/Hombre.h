@@ -12,11 +12,11 @@ public:
 	void dibuja();
 	Hombre();
 	virtual ~Hombre();
-	float getAltura(){return altura;}
+	
 
 private:
 	SpriteSequence sprite;
-	float altura;
+
 
 
 };

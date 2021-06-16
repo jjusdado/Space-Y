@@ -18,8 +18,8 @@ void Interaccion::rebote(Hombre &h, Caja c)
 		h.posicion.y=xmax-1.8;
 		h.velocidad.y=0;
 	}
-	if(h.posicion.y<xmin){
-		h.posicion.y=xmin;
+	if(h.posicion.y<xmin+0.4f){
+		h.posicion.y=xmin+0.4f;
 		h.velocidad.y=0;
 	}
 }
@@ -122,11 +122,9 @@ bool Interaccion::rebote(Esfera &esfera1, Esfera &esfera2)
 }
 bool Interaccion::colision(Obstaculo o, Hombre h)
 {
-	Vector2D pos=h.getPos(); //la posicion del hombre de la base
-	pos.y+=h.getAltura()/2.0f; //posicion del centro
 
-	float distancia=(o.posicion-pos).modulo();
-	if(distancia<0.8+o.radio)
+	float distancia=(o.posicion-h.posicion).modulo();
+	if(distancia<0.5f+o.radio)
 		return true;	
 	return false;
 }
